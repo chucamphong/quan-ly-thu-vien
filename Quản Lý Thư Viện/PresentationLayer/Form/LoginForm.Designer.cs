@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlTitleBar = new Guna.UI.WinForms.GunaPanel();
             this.btnClose = new Guna.UI.WinForms.GunaControlBox();
             this.pnlMain = new Guna.UI.WinForms.GunaPanel();
@@ -38,6 +39,7 @@
             this.txtPassword = new Guna.UI.WinForms.GunaTextBox();
             this.lblPassword = new Guna.UI.WinForms.GunaLabel();
             this.btnLogin = new Guna.UI.WinForms.GunaGradientButton();
+            this.drgTitleBar = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.pnlTitleBar.SuspendLayout();
             this.pnlMain.SuspendLayout();
             this.SuspendLayout();
@@ -91,7 +93,7 @@
             this.lblLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(53, 54);
+            this.lblLogin.Location = new System.Drawing.Point(53, 31);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(156, 37);
             this.lblLogin.TabIndex = 0;
@@ -103,7 +105,7 @@
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblDescription.ForeColor = System.Drawing.Color.LightGray;
-            this.lblDescription.Location = new System.Drawing.Point(57, 97);
+            this.lblDescription.Location = new System.Drawing.Point(57, 74);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(289, 15);
             this.lblDescription.TabIndex = 1;
@@ -115,7 +117,7 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.Silver;
-            this.lblUsername.Location = new System.Drawing.Point(56, 135);
+            this.lblUsername.Location = new System.Drawing.Point(56, 125);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(111, 21);
             this.lblUsername.TabIndex = 2;
@@ -131,7 +133,7 @@
             this.txtUsername.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.txtUsername.FocusedForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(57, 161);
+            this.txtUsername.Location = new System.Drawing.Point(57, 151);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(0);
             this.txtUsername.MaxLength = 30;
             this.txtUsername.Name = "txtUsername";
@@ -150,7 +152,7 @@
             this.txtPassword.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.txtPassword.FocusedForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(57, 243);
+            this.txtPassword.Location = new System.Drawing.Point(57, 233);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(0);
             this.txtPassword.MaxLength = 30;
             this.txtPassword.Name = "txtPassword";
@@ -166,7 +168,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.Silver;
-            this.lblPassword.Location = new System.Drawing.Point(56, 217);
+            this.lblPassword.Location = new System.Drawing.Point(56, 207);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(75, 21);
             this.lblPassword.TabIndex = 4;
@@ -189,7 +191,7 @@
             this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
             this.btnLogin.Image = null;
             this.btnLogin.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnLogin.Location = new System.Drawing.Point(60, 304);
+            this.btnLogin.Location = new System.Drawing.Point(60, 312);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(170)))), ((int)(((byte)(156)))));
             this.btnLogin.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(254)))), ((int)(((byte)(191)))));
@@ -203,6 +205,10 @@
             this.btnLogin.Text = "Đăng Nhập";
             this.btnLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnLogin.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
+            // 
+            // drgTitleBar
+            // 
+            this.drgTitleBar.TargetControl = this.pnlTitleBar;
             // 
             // LoginForm
             // 
@@ -241,5 +247,6 @@
         private Guna.UI.WinForms.GunaTextBox txtPassword;
         private Guna.UI.WinForms.GunaLabel lblPassword;
         private Guna.UI.WinForms.GunaGradientButton btnLogin;
+        private Guna.UI.WinForms.GunaDragControl drgTitleBar;
     }
 }
