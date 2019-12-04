@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.pnlTitleBar = new Guna.UI.WinForms.GunaPanel();
-            this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
+            this.btnClose = new Guna.UI.WinForms.GunaControlBox();
             this.pnlMain = new Guna.UI.WinForms.GunaPanel();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaTextBox2 = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
+            this.lblLogin = new Guna.UI.WinForms.GunaLabel();
+            this.lblDescription = new Guna.UI.WinForms.GunaLabel();
+            this.lblUsername = new Guna.UI.WinForms.GunaLabel();
+            this.txtUsername = new Guna.UI.WinForms.GunaTextBox();
+            this.txtPassword = new Guna.UI.WinForms.GunaTextBox();
+            this.lblPassword = new Guna.UI.WinForms.GunaLabel();
             this.btnLogin = new Guna.UI.WinForms.GunaGradientButton();
             this.pnlTitleBar.SuspendLayout();
             this.pnlMain.SuspendLayout();
@@ -45,27 +45,27 @@
             // pnlTitleBar
             // 
             this.pnlTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.pnlTitleBar.Controls.Add(this.gunaControlBox1);
+            this.pnlTitleBar.Controls.Add(this.btnClose);
             this.pnlTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitleBar.Location = new System.Drawing.Point(0, 0);
             this.pnlTitleBar.Name = "pnlTitleBar";
             this.pnlTitleBar.Size = new System.Drawing.Size(800, 47);
             this.pnlTitleBar.TabIndex = 0;
             // 
-            // gunaControlBox1
+            // btnClose
             // 
-            this.gunaControlBox1.AnimationHoverSpeed = 0.07F;
-            this.gunaControlBox1.AnimationSpeed = 0.03F;
-            this.gunaControlBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gunaControlBox1.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.gunaControlBox1.IconSize = 15F;
-            this.gunaControlBox1.Location = new System.Drawing.Point(755, 0);
-            this.gunaControlBox1.Name = "gunaControlBox1";
-            this.gunaControlBox1.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(161)))), ((int)(((byte)(156)))));
-            this.gunaControlBox1.OnHoverIconColor = System.Drawing.Color.White;
-            this.gunaControlBox1.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(247)))), ((int)(((byte)(191)))));
-            this.gunaControlBox1.Size = new System.Drawing.Size(45, 47);
-            this.gunaControlBox1.TabIndex = 0;
+            this.btnClose.AnimationHoverSpeed = 0.07F;
+            this.btnClose.AnimationSpeed = 0.03F;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClose.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnClose.IconSize = 15F;
+            this.btnClose.Location = new System.Drawing.Point(755, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(161)))), ((int)(((byte)(156)))));
+            this.btnClose.OnHoverIconColor = System.Drawing.Color.White;
+            this.btnClose.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(247)))), ((int)(((byte)(191)))));
+            this.btnClose.Size = new System.Drawing.Size(45, 47);
+            this.btnClose.TabIndex = 0;
             // 
             // pnlMain
             // 
@@ -74,103 +74,103 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlMain.BackColor = System.Drawing.Color.Transparent;
             this.pnlMain.Controls.Add(this.btnLogin);
-            this.pnlMain.Controls.Add(this.gunaTextBox2);
-            this.pnlMain.Controls.Add(this.gunaLabel4);
-            this.pnlMain.Controls.Add(this.gunaTextBox1);
-            this.pnlMain.Controls.Add(this.gunaLabel3);
-            this.pnlMain.Controls.Add(this.gunaLabel2);
-            this.pnlMain.Controls.Add(this.gunaLabel1);
+            this.pnlMain.Controls.Add(this.txtPassword);
+            this.pnlMain.Controls.Add(this.lblPassword);
+            this.pnlMain.Controls.Add(this.txtUsername);
+            this.pnlMain.Controls.Add(this.lblUsername);
+            this.pnlMain.Controls.Add(this.lblDescription);
+            this.pnlMain.Controls.Add(this.lblLogin);
             this.pnlMain.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlMain.Location = new System.Drawing.Point(0, 47);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(800, 403);
             this.pnlMain.TabIndex = 1;
             // 
-            // gunaLabel1
+            // lblLogin
             // 
-            this.gunaLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(267, 48);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(156, 37);
-            this.gunaLabel1.TabIndex = 0;
-            this.gunaLabel1.Text = "Đăng Nhập";
+            this.lblLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.Location = new System.Drawing.Point(267, 48);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(156, 37);
+            this.lblLogin.TabIndex = 0;
+            this.lblLogin.Text = "Đăng Nhập";
             // 
-            // gunaLabel2
+            // lblDescription
             // 
-            this.gunaLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel2.ForeColor = System.Drawing.Color.LightGray;
-            this.gunaLabel2.Location = new System.Drawing.Point(271, 91);
-            this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(289, 15);
-            this.gunaLabel2.TabIndex = 1;
-            this.gunaLabel2.Text = "Để sử dụng được phần mềm bạn cần phải đăng nhập";
+            this.lblDescription.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblDescription.ForeColor = System.Drawing.Color.LightGray;
+            this.lblDescription.Location = new System.Drawing.Point(271, 91);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(289, 15);
+            this.lblDescription.TabIndex = 1;
+            this.lblDescription.Text = "Để sử dụng được phần mềm bạn cần phải đăng nhập";
             // 
-            // gunaLabel3
+            // lblUsername
             // 
-            this.gunaLabel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gunaLabel3.AutoSize = true;
-            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.ForeColor = System.Drawing.Color.Silver;
-            this.gunaLabel3.Location = new System.Drawing.Point(270, 129);
-            this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(111, 21);
-            this.gunaLabel3.TabIndex = 2;
-            this.gunaLabel3.Text = "Tên đăng nhập";
+            this.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.Silver;
+            this.lblUsername.Location = new System.Drawing.Point(270, 129);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(111, 21);
+            this.lblUsername.TabIndex = 2;
+            this.lblUsername.Text = "Tên đăng nhập";
             // 
-            // gunaTextBox1
+            // txtUsername
             // 
-            this.gunaTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gunaTextBox1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.gunaTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.gunaTextBox1.FocusedForeColor = System.Drawing.Color.WhiteSmoke;
-            this.gunaTextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox1.Location = new System.Drawing.Point(271, 155);
-            this.gunaTextBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.gunaTextBox1.MaxLength = 30;
-            this.gunaTextBox1.Name = "gunaTextBox1";
-            this.gunaTextBox1.PasswordChar = '\0';
-            this.gunaTextBox1.Radius = 5;
-            this.gunaTextBox1.Size = new System.Drawing.Size(289, 38);
-            this.gunaTextBox1.TabIndex = 3;
+            this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtUsername.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.txtUsername.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUsername.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.txtUsername.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.txtUsername.FocusedForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(271, 155);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(0);
+            this.txtUsername.MaxLength = 30;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.PasswordChar = '\0';
+            this.txtUsername.Radius = 5;
+            this.txtUsername.Size = new System.Drawing.Size(289, 38);
+            this.txtUsername.TabIndex = 3;
             // 
-            // gunaTextBox2
+            // txtPassword
             // 
-            this.gunaTextBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gunaTextBox2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.gunaTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.gunaTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox2.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.gunaTextBox2.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.gunaTextBox2.FocusedForeColor = System.Drawing.Color.WhiteSmoke;
-            this.gunaTextBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox2.Location = new System.Drawing.Point(271, 237);
-            this.gunaTextBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.gunaTextBox2.MaxLength = 30;
-            this.gunaTextBox2.Name = "gunaTextBox2";
-            this.gunaTextBox2.PasswordChar = '●';
-            this.gunaTextBox2.Radius = 5;
-            this.gunaTextBox2.Size = new System.Drawing.Size(289, 38);
-            this.gunaTextBox2.TabIndex = 5;
-            this.gunaTextBox2.UseSystemPasswordChar = true;
+            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtPassword.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.txtPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPassword.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.txtPassword.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.txtPassword.FocusedForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(271, 237);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(0);
+            this.txtPassword.MaxLength = 30;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '●';
+            this.txtPassword.Radius = 5;
+            this.txtPassword.Size = new System.Drawing.Size(289, 38);
+            this.txtPassword.TabIndex = 5;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
-            // gunaLabel4
+            // lblPassword
             // 
-            this.gunaLabel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gunaLabel4.AutoSize = true;
-            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.ForeColor = System.Drawing.Color.Silver;
-            this.gunaLabel4.Location = new System.Drawing.Point(270, 211);
-            this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(75, 21);
-            this.gunaLabel4.TabIndex = 4;
-            this.gunaLabel4.Text = "Mật khẩu";
+            this.lblPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.ForeColor = System.Drawing.Color.Silver;
+            this.lblPassword.Location = new System.Drawing.Point(270, 211);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(75, 21);
+            this.lblPassword.TabIndex = 4;
+            this.lblPassword.Text = "Mật khẩu";
             // 
             // btnLogin
             // 
@@ -232,14 +232,14 @@
         #endregion
 
         private Guna.UI.WinForms.GunaPanel pnlTitleBar;
-        private Guna.UI.WinForms.GunaControlBox gunaControlBox1;
+        private Guna.UI.WinForms.GunaControlBox btnClose;
         private Guna.UI.WinForms.GunaPanel pnlMain;
-        private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private Guna.UI.WinForms.GunaLabel gunaLabel2;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
-        private Guna.UI.WinForms.GunaLabel gunaLabel3;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox2;
-        private Guna.UI.WinForms.GunaLabel gunaLabel4;
+        private Guna.UI.WinForms.GunaLabel lblLogin;
+        private Guna.UI.WinForms.GunaLabel lblDescription;
+        private Guna.UI.WinForms.GunaTextBox txtUsername;
+        private Guna.UI.WinForms.GunaLabel lblUsername;
+        private Guna.UI.WinForms.GunaTextBox txtPassword;
+        private Guna.UI.WinForms.GunaLabel lblPassword;
         private Guna.UI.WinForms.GunaGradientButton btnLogin;
     }
 }
