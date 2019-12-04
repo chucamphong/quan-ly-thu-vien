@@ -49,7 +49,7 @@
             this.pnlTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitleBar.Location = new System.Drawing.Point(0, 0);
             this.pnlTitleBar.Name = "pnlTitleBar";
-            this.pnlTitleBar.Size = new System.Drawing.Size(800, 47);
+            this.pnlTitleBar.Size = new System.Drawing.Size(400, 47);
             this.pnlTitleBar.TabIndex = 0;
             // 
             // btnClose
@@ -59,7 +59,7 @@
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnClose.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btnClose.IconSize = 15F;
-            this.btnClose.Location = new System.Drawing.Point(755, 0);
+            this.btnClose.Location = new System.Drawing.Point(355, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(161)))), ((int)(((byte)(156)))));
             this.btnClose.OnHoverIconColor = System.Drawing.Color.White;
@@ -83,7 +83,7 @@
             this.pnlMain.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlMain.Location = new System.Drawing.Point(0, 47);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(800, 403);
+            this.pnlMain.Size = new System.Drawing.Size(400, 403);
             this.pnlMain.TabIndex = 1;
             // 
             // lblLogin
@@ -91,7 +91,7 @@
             this.lblLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(267, 48);
+            this.lblLogin.Location = new System.Drawing.Point(53, 54);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(156, 37);
             this.lblLogin.TabIndex = 0;
@@ -103,7 +103,7 @@
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblDescription.ForeColor = System.Drawing.Color.LightGray;
-            this.lblDescription.Location = new System.Drawing.Point(271, 91);
+            this.lblDescription.Location = new System.Drawing.Point(57, 97);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(289, 15);
             this.lblDescription.TabIndex = 1;
@@ -115,7 +115,7 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.Silver;
-            this.lblUsername.Location = new System.Drawing.Point(270, 129);
+            this.lblUsername.Location = new System.Drawing.Point(56, 135);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(111, 21);
             this.lblUsername.TabIndex = 2;
@@ -131,7 +131,7 @@
             this.txtUsername.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.txtUsername.FocusedForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(271, 155);
+            this.txtUsername.Location = new System.Drawing.Point(57, 161);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(0);
             this.txtUsername.MaxLength = 30;
             this.txtUsername.Name = "txtUsername";
@@ -150,7 +150,7 @@
             this.txtPassword.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.txtPassword.FocusedForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(271, 237);
+            this.txtPassword.Location = new System.Drawing.Point(57, 243);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(0);
             this.txtPassword.MaxLength = 30;
             this.txtPassword.Name = "txtPassword";
@@ -166,7 +166,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.Silver;
-            this.lblPassword.Location = new System.Drawing.Point(270, 211);
+            this.lblPassword.Location = new System.Drawing.Point(56, 217);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(75, 21);
             this.lblPassword.TabIndex = 4;
@@ -189,7 +189,7 @@
             this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
             this.btnLogin.Image = null;
             this.btnLogin.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnLogin.Location = new System.Drawing.Point(274, 298);
+            this.btnLogin.Location = new System.Drawing.Point(60, 304);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(170)))), ((int)(((byte)(156)))));
             this.btnLogin.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(254)))), ((int)(((byte)(191)))));
@@ -209,7 +209,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(400, 450);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pnlTitleBar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
