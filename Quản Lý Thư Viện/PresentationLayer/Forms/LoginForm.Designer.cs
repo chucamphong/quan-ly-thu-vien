@@ -1,4 +1,4 @@
-﻿namespace PresentationLayer
+﻿namespace PresentationLayer.Forms
 {
     partial class LoginForm
     {
@@ -115,10 +115,11 @@
             this.btnLogin.OnPressedColor = System.Drawing.Color.Transparent;
             this.btnLogin.Radius = 3;
             this.btnLogin.Size = new System.Drawing.Size(286, 41);
-            this.btnLogin.TabIndex = 3;
+            this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Đăng Nhập";
             this.btnLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnLogin.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
+            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // txtPassword
             // 
@@ -138,7 +139,7 @@
             this.txtPassword.PasswordChar = '●';
             this.txtPassword.Radius = 5;
             this.txtPassword.Size = new System.Drawing.Size(289, 38);
-            this.txtPassword.TabIndex = 2;
+            this.txtPassword.TabIndex = 5;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // lblPassword
@@ -150,7 +151,7 @@
             this.lblPassword.Location = new System.Drawing.Point(56, 207);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(75, 21);
-            this.lblPassword.TabIndex = 0;
+            this.lblPassword.TabIndex = 4;
             this.lblPassword.Text = "Mật khẩu";
             // 
             // txtUsername
@@ -171,7 +172,7 @@
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.Radius = 5;
             this.txtUsername.Size = new System.Drawing.Size(289, 38);
-            this.txtUsername.TabIndex = 1;
+            this.txtUsername.TabIndex = 3;
             // 
             // lblUsername
             // 
@@ -182,7 +183,7 @@
             this.lblUsername.Location = new System.Drawing.Point(56, 125);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(111, 21);
-            this.lblUsername.TabIndex = 0;
+            this.lblUsername.TabIndex = 2;
             this.lblUsername.Text = "Tên đăng nhập";
             // 
             // lblDescription
@@ -194,7 +195,7 @@
             this.lblDescription.Location = new System.Drawing.Point(57, 74);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(289, 15);
-            this.lblDescription.TabIndex = 0;
+            this.lblDescription.TabIndex = 1;
             this.lblDescription.Text = "Để sử dụng được phần mềm bạn cần phải đăng nhập";
             // 
             // lblLogin
@@ -214,6 +215,7 @@
             // 
             // LoginForm
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));

@@ -8,8 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using BusinessLogicLayer;
 
-namespace PresentationLayer
+namespace PresentationLayer.Forms
 {
     public partial class LoginForm : Form
     {
@@ -21,6 +22,20 @@ namespace PresentationLayer
         private void LoginForm_Activated(object sender, EventArgs e)
         {
             Guna.UI.Lib.GraphicsHelper.ShadowForm(sender as LoginForm);
+        }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            bool isLogged = UserEntity.Login(txtUsername.Text, txtPassword.Text);
+
+            if (isLogged)
+            {
+                MessageBox.Show("Đăng nhập thành công.");
+            }
+            else
+            {
+                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng.");
+            }
         }
     }
 }
