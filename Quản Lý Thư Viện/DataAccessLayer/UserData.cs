@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataAccessLayer.Models;
+using DataTransferObject.Models;
 
 namespace DataAccessLayer
 {
@@ -11,14 +11,11 @@ namespace DataAccessLayer
     {
         private static readonly LibraryManagementSystemContext Database = new LibraryManagementSystemContext();
 
-        public static User Find(string email, string password)
+        public static User FindByEmailAndPassword(string @email, string password)
         {
-            return Database.Users.FirstOrDefault(user => user.Email == email && user.Password == password);
-        }
-
-        public static IEnumerable<User> Where(Func<User, bool> predicate)
-        {
-            return Database.Users.Where(predicate);
+            return Database.Users.Where(u => u.Email.Equals(@email))
+                .Where(u => u.Password.Equals(password))
+                .FirstOrDefault();
         }
     }
 }

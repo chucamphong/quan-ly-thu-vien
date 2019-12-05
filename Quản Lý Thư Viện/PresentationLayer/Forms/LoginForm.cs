@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using BusinessLogicLayer;
 
-namespace PresentationLayer
+namespace PresentationLayer.Forms
 {
     public partial class LoginForm : Form
     {
@@ -30,11 +30,11 @@ namespace PresentationLayer
 
             if (isLogged)
             {
-                MessageBox.Show("Có email");
+                MessageBox.Show("Đăng nhập thành công.");
             }
             else
             {
-                MessageBox.Show("Không tồn tại email");
+                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng.");
             }
         }
     }

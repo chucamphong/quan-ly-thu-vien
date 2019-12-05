@@ -4,12 +4,17 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataAccessLayer.Models;
+using DataTransferObject.Models;
 
 namespace DataAccessLayer
 {
-    class LibraryManagementSystemContext: DbContext
+    class LibraryManagementSystemContext : DbContext
     {
+        public LibraryManagementSystemContext() : base("name=LibraryManagementSystemContext")
+        {
+            // 
+        }
+
         public DbSet<User> Users { get; set; }
     }
 }
