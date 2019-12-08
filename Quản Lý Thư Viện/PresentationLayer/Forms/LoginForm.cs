@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer;
+using DataTransferObject.Models;
 using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Security.Authentication;
 
 namespace PresentationLayer.Forms
 {
@@ -28,24 +30,31 @@ namespace PresentationLayer.Forms
         private async void BtnLogin_Click(object sender, EventArgs e)
         {
             GunaGradientButton btnLogin = sender as GunaGradientButton;
-            btnLogin.Enabled = false;
+            Form loadingForm = new LoadingForm();
 
-            var loadingForm = new LoadingForm();
-            loadingForm.Show();
-            
-            bool isLogged = await UserEntity.Login(txtUsername.Text, txtPassword.Text);
-
-            loadingForm.Close();
-
-            btnLogin.Enabled = true;
-
-            if (isLogged)
+            try
             {
-                MessageBox.Show("Đăng nhập thành công.");
+                btnLogin.Enabled = false;
+                loadingForm.Show();
+
+                await UserEntity.Login(txtUsername.Text, txtPassword.Text);
+
+                this.Hide();
+                
+                loadingForm.Close();
+                
+                new HomeForm().ShowDialog();
+                
+                this.Close();
             }
-            else
+            catch (AuthenticationException exception)
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng.");
+                loadingForm.Close();
+                MessageBox.Show(exception.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                btnLogin.Enabled = true;
             }
         }
     }
