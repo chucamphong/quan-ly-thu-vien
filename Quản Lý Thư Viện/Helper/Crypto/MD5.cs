@@ -16,9 +16,9 @@ namespace Helper.Crypto
             MD5CryptoServiceProvider md5CryptoServiceProvider = new MD5CryptoServiceProvider();
             byte[] bytes = md5CryptoServiceProvider.ComputeHash(new UTF8Encoding().GetBytes(input));
 
-            for (int i = 0; i < bytes.Length; i++)
+            foreach (byte b in bytes)
             {
-                hash.Append(bytes[i].ToString("x2"));
+                hash.Append(b.ToString("x2"));
             }
 
             return hash.ToString();
