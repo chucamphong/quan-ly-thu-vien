@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace Helper.Crypto
 {
@@ -11,17 +6,19 @@ namespace Helper.Crypto
     {
         public static string Hash(string input)
         {
-            StringBuilder hash = new StringBuilder();
-
-            MD5CryptoServiceProvider md5CryptoServiceProvider = new MD5CryptoServiceProvider();
-            byte[] bytes = md5CryptoServiceProvider.ComputeHash(new UTF8Encoding().GetBytes(input));
-
-            foreach (byte b in bytes)
+            using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
             {
-                hash.Append(b.ToString("x2"));
-            }
+                byte[] data = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
 
-            return hash.ToString();
+                StringBuilder hash = new StringBuilder();
+                
+                foreach (byte b in data)
+                {
+                    hash.Append(b.ToString("x2"));
+                }
+
+                return hash.ToString();
+            }
         }
     }
 }
