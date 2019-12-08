@@ -7,15 +7,14 @@ using DataTransferObject.Models;
 
 namespace DataAccessLayer
 {
-    public class UserData
+    public sealed class UserData
     {
         private static readonly LibraryManagementSystemContext Database = new LibraryManagementSystemContext();
 
-        public static User FindByEmailAndPassword(string @email, string password)
+        public static User FindByEmailAndPassword(string email, string password)
         {
-            return Database.Users.Where(u => u.Email.Equals(@email))
-                .Where(u => u.Password.Equals(password))
-                .FirstOrDefault();
+            return Database.Users.FirstOrDefault(user => user.Email.Equals(email) &&
+                                                         user.Password.Equals(password));
         }
     }
 }
