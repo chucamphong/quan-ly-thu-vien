@@ -67,7 +67,7 @@
             this.prgLoading.BorderColor = System.Drawing.Color.Black;
             this.prgLoading.ColorStyle = Guna.UI.WinForms.ColorStyle.Default;
             this.prgLoading.Dock = System.Windows.Forms.DockStyle.Top;
-            this.prgLoading.IdleColor = System.Drawing.Color.Gainsboro;
+            this.prgLoading.IdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.prgLoading.Location = new System.Drawing.Point(0, 90);
             this.prgLoading.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.prgLoading.Name = "prgLoading";
@@ -89,7 +89,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoadingForm";
