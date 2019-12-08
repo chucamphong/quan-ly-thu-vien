@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLogicLayer;
+using Guna.UI.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
-using BusinessLogicLayer;
 
 namespace PresentationLayer.Forms
 {
@@ -24,9 +25,19 @@ namespace PresentationLayer.Forms
             Guna.UI.Lib.GraphicsHelper.ShadowForm(sender as LoginForm);
         }
 
-        private void BtnLogin_Click(object sender, EventArgs e)
+        private async void BtnLogin_Click(object sender, EventArgs e)
         {
-            bool isLogged = UserEntity.Login(txtUsername.Text, txtPassword.Text);
+            GunaGradientButton btnLogin = sender as GunaGradientButton;
+            btnLogin.Enabled = false;
+
+            var loadingForm = new LoadingForm();
+            loadingForm.Show();
+            
+            bool isLogged = await UserEntity.Login(txtUsername.Text, txtPassword.Text);
+
+            loadingForm.Close();
+
+            btnLogin.Enabled = true;
 
             if (isLogged)
             {
