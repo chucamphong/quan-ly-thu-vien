@@ -1,13 +1,20 @@
-﻿using DataAccessLayer;
+﻿using DataAccessLayer.Data;
+using DataTransferObject.Models;
 using Helper.Crypto;
 using System.Threading.Tasks;
 using System.Security.Authentication;
-using DataTransferObject.Models;
 
 namespace BusinessLogicLayer
 {
     public class UserEntity
     {
+        /// <summary>
+        /// Kiểm tra tài khoản và mật khẩu
+        /// </summary>
+        /// <param name="email">Địa chỉ email</param>
+        /// <param name="password">Mật khẩu</param>
+        /// <exception cref="AuthenticationException">Tài khoản hoặc mật khẩu không đúng</exception>
+        /// <returns>Thông tin người dùng</returns>
         public static async Task<User> Login(string email, string password)
         {
             string hashPassword = MD5.Hash(password);

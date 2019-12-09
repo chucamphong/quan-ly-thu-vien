@@ -1,23 +1,24 @@
 ﻿namespace DataAccessLayer.Migrations
 {
-    using System;
-    using System.Data.Entity;
+    using DataAccessLayer.Data;
+    using DataTransferObject.Models;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<DataAccessLayer.LibraryManagementSystemContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<LibraryManagementSystemContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            this.AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(DataAccessLayer.LibraryManagementSystemContext context)
+        protected override void Seed(LibraryManagementSystemContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            string password = "e10adc3949ba59abbe56e057f20f883e"; // 123456
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
-            //  to avoid creating duplicate seed data.
+            context.Users.AddOrUpdate(col => col.Id,
+                new User { Name = "Chu Cẩm Phong", Email = "chucamphong@gmail.com", Password = password },
+                new User { Name = "Trần Duy Anh", Email = "tranduyanh@gmail.com", Password = password }
+            );
         }
     }
 }

@@ -141,7 +141,6 @@
             this.txtPassword.Radius = 5;
             this.txtPassword.Size = new System.Drawing.Size(289, 38);
             this.txtPassword.TabIndex = 5;
-            this.txtPassword.Text = "123456";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // lblPassword
@@ -175,7 +174,6 @@
             this.txtUsername.Radius = 5;
             this.txtUsername.Size = new System.Drawing.Size(289, 38);
             this.txtUsername.TabIndex = 3;
-            this.txtUsername.Text = "chucamphong@gmail.com";
             // 
             // lblUsername
             // 
