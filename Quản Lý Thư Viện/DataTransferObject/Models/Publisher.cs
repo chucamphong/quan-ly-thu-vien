@@ -14,7 +14,6 @@ namespace DataTransferObject.Models
         [Required, Index("Unique_Publisher_Thumbnail", IsUnique = true), MaxLength(100)]
         public string Name { get; set; }
 
-        [Required]
         public virtual ICollection<Book> Books { get; set; }
     }
 }

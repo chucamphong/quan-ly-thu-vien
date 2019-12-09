@@ -17,10 +17,11 @@
         {
             this.AutomaticMigrationsEnabled = true;
             this.Users = this.UsersTableData();
-            this.Books = this.BooksTableData();
-            this.Publishers = this.PublishersTableData();
             this.Authors = this.AuthorsTableData();
+            this.Publishers = this.PublishersTableData();
             this.Categories = this.CategoriesTableData();
+            // Đặt cuối cùng vì nó cần các data ở trên
+            this.Books = this.BooksTableData();
         }
 
         protected override void Seed(LibraryManagementSystemContext context)
@@ -30,7 +31,7 @@
 
             // Authors Table Seeder
             context.Authors.AddRange(this.Authors);
-            
+
             // Publishers Table Seeder
             context.Publishers.AddRange(this.Publishers);
 
@@ -57,36 +58,36 @@
 
         private List<Book> BooksTableData()
         {
-            List<Book> books = new List<Book>();
-
-            books.Add(new Book
+            List<Book> books = new List<Book>
             {
-                Name = "Thám tử lừng danh Conan",
-                Authors = this.Authors.FindAll(c => c.Name.Equals("Aoyama Goushou")),
-                Publishers = new List<Publisher> {
-                    this.Publishers.Find(p => p.Name == "Viz Media"),
-                    this.Publishers.Find(p => p.Name == "Funimation")
-                },
-                Thumbnail = "Image Conan",
-                Categories = new List<Category>
+                new Book
                 {
-                    this.Categories.Find(c => c.Name == "Trinh thám")
-                }
-            });
-
-            books.Add(new Book
-            {
-                Name = "Doraemon - Chú mèm máy đến từ tương lai",
-                Authors = this.Authors.FindAll(c => c.Name.Equals("Fujiko Fujio")),
-                Publishers = new List<Publisher> {
-                    this.Publishers.Find(p => p.Name == "Nhà xuất bản Kim Đồng")
+                    Name = "Thám tử lừng danh Conan",
+                    Authors = this.Authors.FindAll(c => c.Name.Equals("Aoyama Goushou")),
+                    Publishers = new List<Publisher> {
+                        this.Publishers.Find(p => p.Name == "Viz Media"),
+                        this.Publishers.Find(p => p.Name == "Funimation")
+                    },
+                    Thumbnail = "Image Conan",
+                    Categories = new List<Category>
+                    {
+                        this.Categories.Find(c => c.Name == "Trinh thám")
+                    }
                 },
-                Thumbnail = "Image Doraemon",
-                Categories = new List<Category>
+                new Book
                 {
-                    this.Categories.Find(c => c.Name == "Hành động")
+                    Name = "Doraemon - Chú mèm máy đến từ tương lai",
+                    Authors = this.Authors.FindAll(c => c.Name.Equals("Fujiko Fujio")),
+                    Publishers = new List<Publisher> {
+                        this.Publishers.Find(p => p.Name == "Nhà xuất bản Kim Đồng")
+                    },
+                    Thumbnail = "ImageDoraemon",
+                    Categories = new List<Category>
+                    {
+                        this.Categories.Find(c => c.Name == "Hành động")
+                    }
                 }
-            });
+            };
 
             return books;
         }

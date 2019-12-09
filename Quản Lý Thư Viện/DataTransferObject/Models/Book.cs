@@ -18,10 +18,10 @@ namespace DataTransferObject.Models
         public string Thumbnail { get; set; }
 
         [Required]
-        public ICollection<Author> Authors { get; set; }
+        public virtual ICollection<Author> Authors { get; set; }
 
         [Required]
-        public ICollection<Publisher> Publishers { get; set; }
+        public virtual ICollection<Publisher> Publishers { get; set; }
 
         [Required]
         public virtual ICollection<Category> Categories { get; set; }
