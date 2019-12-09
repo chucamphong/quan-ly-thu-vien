@@ -30,104 +30,113 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gnResize = new Guna.UI.WinForms.GunaResize(this.components);
-            this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
-            this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
-            this.gunaControlBox2 = new Guna.UI.WinForms.GunaControlBox();
-            this.gunaControlBox3 = new Guna.UI.WinForms.GunaControlBox();
-            this.gunaLinePanel1.SuspendLayout();
+            this.pnlTitleBar = new Guna.UI.WinForms.GunaLinePanel();
+            this.btnMinimize = new Guna.UI.WinForms.GunaControlBox();
+            this.btnMaximize = new Guna.UI.WinForms.GunaControlBox();
+            this.btnClose = new Guna.UI.WinForms.GunaControlBox();
+            this.drgTitleBar = new Guna.UI.WinForms.GunaDragControl(this.components);
+            this.pnlTitleBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // gnResize
             // 
             this.gnResize.TargetForm = this;
             // 
-            // gunaLinePanel1
+            // pnlTitleBar
             // 
-            this.gunaLinePanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.gunaLinePanel1.Controls.Add(this.gunaControlBox3);
-            this.gunaLinePanel1.Controls.Add(this.gunaControlBox2);
-            this.gunaLinePanel1.Controls.Add(this.gunaControlBox1);
-            this.gunaLinePanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gunaLinePanel1.LineColor = System.Drawing.Color.Black;
-            this.gunaLinePanel1.LineStyle = System.Windows.Forms.BorderStyle.None;
-            this.gunaLinePanel1.Location = new System.Drawing.Point(3, 3);
-            this.gunaLinePanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.gunaLinePanel1.Name = "gunaLinePanel1";
-            this.gunaLinePanel1.Size = new System.Drawing.Size(778, 47);
-            this.gunaLinePanel1.TabIndex = 0;
+            this.pnlTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.pnlTitleBar.Controls.Add(this.btnMinimize);
+            this.pnlTitleBar.Controls.Add(this.btnMaximize);
+            this.pnlTitleBar.Controls.Add(this.btnClose);
+            this.pnlTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitleBar.LineColor = System.Drawing.Color.Black;
+            this.pnlTitleBar.LineStyle = System.Windows.Forms.BorderStyle.None;
+            this.pnlTitleBar.Location = new System.Drawing.Point(3, 3);
+            this.pnlTitleBar.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlTitleBar.Name = "pnlTitleBar";
+            this.pnlTitleBar.Size = new System.Drawing.Size(794, 47);
+            this.pnlTitleBar.TabIndex = 0;
             // 
-            // gunaControlBox1
+            // btnMinimize
             // 
-            this.gunaControlBox1.Animated = true;
-            this.gunaControlBox1.AnimationHoverSpeed = 0.07F;
-            this.gunaControlBox1.AnimationSpeed = 0.03F;
-            this.gunaControlBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gunaControlBox1.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.gunaControlBox1.IconSize = 15F;
-            this.gunaControlBox1.Location = new System.Drawing.Point(733, 0);
-            this.gunaControlBox1.Name = "gunaControlBox1";
-            this.gunaControlBox1.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(161)))), ((int)(((byte)(156)))));
-            this.gunaControlBox1.OnHoverIconColor = System.Drawing.Color.White;
-            this.gunaControlBox1.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(247)))), ((int)(((byte)(191)))));
-            this.gunaControlBox1.Size = new System.Drawing.Size(45, 47);
-            this.gunaControlBox1.TabIndex = 0;
+            this.btnMinimize.Animated = true;
+            this.btnMinimize.AnimationHoverSpeed = 0.07F;
+            this.btnMinimize.AnimationSpeed = 0.03F;
+            this.btnMinimize.ControlBoxType = Guna.UI.WinForms.FormControlBoxType.MinimizeBox;
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMinimize.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(205)))), ((int)(((byte)(44)))));
+            this.btnMinimize.IconSize = 15F;
+            this.btnMinimize.Location = new System.Drawing.Point(659, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(150)))), ((int)(((byte)(44)))));
+            this.btnMinimize.OnHoverIconColor = System.Drawing.Color.White;
+            this.btnMinimize.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(150)))), ((int)(((byte)(44)))));
+            this.btnMinimize.Size = new System.Drawing.Size(45, 47);
+            this.btnMinimize.TabIndex = 2;
             // 
-            // gunaControlBox2
+            // btnMaximize
             // 
-            this.gunaControlBox2.Animated = true;
-            this.gunaControlBox2.AnimationHoverSpeed = 0.07F;
-            this.gunaControlBox2.AnimationSpeed = 0.03F;
-            this.gunaControlBox2.ControlBoxType = Guna.UI.WinForms.FormControlBoxType.MaximizeBox;
-            this.gunaControlBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gunaControlBox2.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.gunaControlBox2.IconSize = 15F;
-            this.gunaControlBox2.Location = new System.Drawing.Point(688, 0);
-            this.gunaControlBox2.Name = "gunaControlBox2";
-            this.gunaControlBox2.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(161)))), ((int)(((byte)(156)))));
-            this.gunaControlBox2.OnHoverIconColor = System.Drawing.Color.White;
-            this.gunaControlBox2.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(247)))), ((int)(((byte)(191)))));
-            this.gunaControlBox2.Size = new System.Drawing.Size(45, 47);
-            this.gunaControlBox2.TabIndex = 1;
+            this.btnMaximize.Animated = true;
+            this.btnMaximize.AnimationHoverSpeed = 0.07F;
+            this.btnMaximize.AnimationSpeed = 0.03F;
+            this.btnMaximize.ControlBoxType = Guna.UI.WinForms.FormControlBoxType.MaximizeBox;
+            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMaximize.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(39)))));
+            this.btnMaximize.IconSize = 15F;
+            this.btnMaximize.Location = new System.Drawing.Point(704, 0);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(190)))), ((int)(((byte)(0)))));
+            this.btnMaximize.OnHoverIconColor = System.Drawing.Color.White;
+            this.btnMaximize.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(190)))), ((int)(((byte)(0)))));
+            this.btnMaximize.Size = new System.Drawing.Size(45, 47);
+            this.btnMaximize.TabIndex = 1;
             // 
-            // gunaControlBox3
+            // btnClose
             // 
-            this.gunaControlBox3.Animated = true;
-            this.gunaControlBox3.AnimationHoverSpeed = 0.07F;
-            this.gunaControlBox3.AnimationSpeed = 0.03F;
-            this.gunaControlBox3.ControlBoxType = Guna.UI.WinForms.FormControlBoxType.MinimizeBox;
-            this.gunaControlBox3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gunaControlBox3.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.gunaControlBox3.IconSize = 15F;
-            this.gunaControlBox3.Location = new System.Drawing.Point(643, 0);
-            this.gunaControlBox3.Name = "gunaControlBox3";
-            this.gunaControlBox3.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(161)))), ((int)(((byte)(156)))));
-            this.gunaControlBox3.OnHoverIconColor = System.Drawing.Color.White;
-            this.gunaControlBox3.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(247)))), ((int)(((byte)(191)))));
-            this.gunaControlBox3.Size = new System.Drawing.Size(45, 47);
-            this.gunaControlBox3.TabIndex = 2;
+            this.btnClose.Animated = true;
+            this.btnClose.AnimationHoverSpeed = 0.07F;
+            this.btnClose.AnimationSpeed = 0.03F;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClose.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(95)))), ((int)(((byte)(98)))));
+            this.btnClose.IconSize = 15F;
+            this.btnClose.Location = new System.Drawing.Point(749, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(75)))), ((int)(((byte)(98)))));
+            this.btnClose.OnHoverIconColor = System.Drawing.Color.White;
+            this.btnClose.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(75)))), ((int)(((byte)(98)))));
+            this.btnClose.Size = new System.Drawing.Size(45, 47);
+            this.btnClose.TabIndex = 0;
+            // 
+            // drgTitleBar
+            // 
+            this.drgTitleBar.TargetControl = this.pnlTitleBar;
             // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.gunaLinePanel1);
+            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.pnlTitleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HomeForm";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeForm";
-            this.gunaLinePanel1.ResumeLayout(false);
+            this.pnlTitleBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private Guna.UI.WinForms.GunaResize gnResize;
-        private Guna.UI.WinForms.GunaLinePanel gunaLinePanel1;
-        private Guna.UI.WinForms.GunaControlBox gunaControlBox1;
-        private Guna.UI.WinForms.GunaControlBox gunaControlBox3;
-        private Guna.UI.WinForms.GunaControlBox gunaControlBox2;
+        private Guna.UI.WinForms.GunaLinePanel pnlTitleBar;
+        private Guna.UI.WinForms.GunaControlBox btnClose;
+        private Guna.UI.WinForms.GunaControlBox btnMinimize;
+        private Guna.UI.WinForms.GunaControlBox btnMaximize;
+        private Guna.UI.WinForms.GunaDragControl drgTitleBar;
     }
 }

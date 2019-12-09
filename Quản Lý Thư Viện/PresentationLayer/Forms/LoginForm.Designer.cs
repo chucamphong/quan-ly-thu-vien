@@ -60,13 +60,13 @@
             this.btnClose.AnimationHoverSpeed = 0.07F;
             this.btnClose.AnimationSpeed = 0.03F;
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnClose.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(95)))), ((int)(((byte)(98)))));
             this.btnClose.IconSize = 15F;
             this.btnClose.Location = new System.Drawing.Point(355, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(161)))), ((int)(((byte)(156)))));
+            this.btnClose.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(75)))), ((int)(((byte)(98)))));
             this.btnClose.OnHoverIconColor = System.Drawing.Color.White;
-            this.btnClose.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(247)))), ((int)(((byte)(191)))));
+            this.btnClose.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(75)))), ((int)(((byte)(98)))));
             this.btnClose.Size = new System.Drawing.Size(45, 47);
             this.btnClose.TabIndex = 0;
             // 

@@ -30,13 +30,13 @@ namespace PresentationLayer.Forms
         private async void BtnLogin_Click(object sender, EventArgs e)
         {
             GunaGradientButton btnLogin = sender as GunaGradientButton;
-            Form loadingForm = new LoadingForm();
+            LoadingForm loadingForm = new LoadingForm();
 
             try
             {
                 btnLogin.Enabled = false;
                 loadingForm.Show();
-
+                
                 await UserEntity.Login(txtUsername.Text, txtPassword.Text);
 
                 this.Hide();
