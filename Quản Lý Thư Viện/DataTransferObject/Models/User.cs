@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataTransferObject.Models
@@ -6,13 +7,13 @@ namespace DataTransferObject.Models
     [Table("Users")]
     public class User
     {
-        [Key]
-        public int Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid Id { get; set; }
 
         [Required, MinLength(8), MaxLength(30)]
         public string Name { get; set; }
 
-        [Required, Index("Unique_Email", IsUnique = true), MinLength(8), MaxLength(255), Column(TypeName = "varchar")]
+        [Required, Index("Unique_User_Email", IsUnique = true), MinLength(8), MaxLength(255), Column(TypeName = "varchar"), EmailAddress]
         public string Email { get; set; }
 
         [Required, MaxLength(255), Column(TypeName = "varchar")]
