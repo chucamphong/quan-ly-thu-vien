@@ -14,7 +14,7 @@ namespace DataTransferObject.Models
         [Required, MinLength(8), MaxLength(30)]
         public string Name { get; set; }
 
-        [Required, Index("Unique_User_Email", IsUnique = true), MinLength(8), MaxLength(255), Column(TypeName = "varchar"), EmailAddress]
+        [Required, Index("Unique_User_Email", IsUnique = true), MaxLength(255), Column(TypeName = "varchar"), EmailAddress]
         public string Email { get; set; }
 
         [Required, MaxLength(255), Column(TypeName = "varchar")]
