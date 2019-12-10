@@ -25,5 +25,7 @@ namespace DataTransferObject.Models
 
         [Required]
         public virtual ICollection<Category> Categories { get; set; }
+
+        public virtual ICollection<UserBook> UserBooks { get; set; }
     }
 }

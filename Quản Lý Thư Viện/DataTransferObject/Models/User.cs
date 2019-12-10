@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -18,5 +19,7 @@ namespace DataTransferObject.Models
 
         [Required, MaxLength(255), Column(TypeName = "varchar")]
         public string Password { get; set; }
+
+        public virtual ICollection<UserBook> UserBooks { get; set; }
     }
 }

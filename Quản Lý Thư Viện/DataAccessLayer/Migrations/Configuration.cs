@@ -16,12 +16,12 @@
         public Configuration()
         {
             this.AutomaticMigrationsEnabled = true;
-            this.Users = this.UsersTableData();
             this.Authors = this.AuthorsTableData();
             this.Publishers = this.PublishersTableData();
             this.Categories = this.CategoriesTableData();
             // Đặt cuối cùng vì nó cần các data ở trên
             this.Books = this.BooksTableData();
+            this.Users = this.UsersTableData();
         }
 
         protected override void Seed(LibraryManagementSystemContext context)
@@ -49,10 +49,23 @@
         {
             string password = "e10adc3949ba59abbe56e057f20f883e"; // 123456
 
+            User chuCamPhong = new User { Name = "Chu Cẩm Phong", Email = "chucamphong@gmail.com", Password = password };
+            User tranDuyAnh = new User { Name = "Trần Duy Anh", Email = "tranduyanh@gmail.com", Password = password };
+            User nguyenXuanHoa = new User { Name = "Nguyễn Xuân Hòa", Email = "nguyenxuanhoa@gmail.com", Password = password };
+
+            chuCamPhong.UserBooks = new List<UserBook> {
+                new UserBook {
+                    User = chuCamPhong,
+                    Book = this.Books.Find(book => book.Name.Equals("Doraemon - Chú mèm máy đến từ tương lai")),
+                    FromDate = new System.DateTime().AddDays(12).AddMonths(5).AddYears(2019),
+                    ToDate = new System.DateTime().AddDays(14).AddMonths(5).AddYears(2019)
+                }
+            };
+
             return new List<User> {
-                new User { Name = "Chu Cẩm Phong", Email = "chucamphong@gmail.com", Password = password },
-                new User { Name = "Trần Duy Anh", Email = "tranduyanh@gmail.com", Password = password },
-                new User { Name = "Nguyễn Xuân Hòa", Email = "nguyenxuanhoa@gmail.com", Password = password }
+                chuCamPhong,
+                tranDuyAnh,
+                nguyenXuanHoa
             };
         }
 
