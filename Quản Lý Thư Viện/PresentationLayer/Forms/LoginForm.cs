@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Security.Authentication;
 using Helper.Validation;
 using Helper.Color;
+using DataTransferObject.Models;
 
 namespace PresentationLayer.Forms
 {
@@ -13,6 +14,7 @@ namespace PresentationLayer.Forms
     {
         private bool _validatedUsername = false;
         private bool _validatedPassword = false;
+        public delegate void SendUserInfo(User user);
 
         public LoginForm()
         {
@@ -40,13 +42,17 @@ namespace PresentationLayer.Forms
                 btnLogin.Enabled = false;
                 loadingForm.Show();
 
-                await UserEntity.Login(txtUsername.Text, txtPassword.Text);
+                User user = await UserEntity.Login(txtUsername.Text, txtPassword.Text);
 
                 this.Hide();
-
+                
                 loadingForm.Close();
 
-                new HomeForm().ShowDialog();
+                var mainForm = new MainForm();
+
+                new SendUserInfo(mainForm.Auth)(user);
+                
+                mainForm.ShowDialog();
 
                 this.Close();
             }
