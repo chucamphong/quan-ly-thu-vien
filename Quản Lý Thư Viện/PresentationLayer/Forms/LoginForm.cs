@@ -1,16 +1,8 @@
 ﻿using BusinessLogicLayer;
-using DataTransferObject.Models;
 using Guna.UI.WinForms;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading;
 using System.Security.Authentication;
 using Helper.Validation;
 using Helper.Color;
@@ -74,20 +66,17 @@ namespace PresentationLayer.Forms
             GunaTextBox txtUsername = sender as GunaTextBox;
             string email = txtUsername.Text;
 
-            if (Validation.IsEmail(email))
+            if (!Validation.IsEmail(email))
             {
-                txtUsername.BorderColor = txtUsername.FocusedBorderColor = CustomColor.MineShaft;
-                this.lblUsernameError.Text = string.Empty;
-                this._validatedUsername = true;
+                this._validatedUsername = false;
+                string message = string.IsNullOrEmpty(email) ? "Địa chỉ email không được để trống." :
+                                                               "Địa chỉ email không hợp lệ.";
+                this.SetErrorTextBox(txtUsername, this.lblUsernameError, message);
                 return;
             }
 
-            this._validatedUsername = false;
-
-            txtUsername.BorderColor = txtUsername.FocusedBorderColor = CustomColor.Mandy;
-
-            this.lblUsernameError.Text = string.IsNullOrEmpty(email) ? "Địa chỉ email không được để trống." :
-                                                                       "Địa chỉ email không hợp lệ.";
+            this._validatedUsername = true;
+            this.ClearErrorTextBox(txtUsername, this.lblUsernameError);
         }
 
         private void TxtPassword_Validating(object sender, CancelEventArgs e)
@@ -97,15 +86,25 @@ namespace PresentationLayer.Forms
 
             if (string.IsNullOrEmpty(password))
             {
-                txtPassword.BorderColor = txtPassword.FocusedBorderColor = CustomColor.Mandy;
-                this.lblPasswordError.Text = "Mật khẩu không được để trống.";
                 this._validatedPassword = false;
+                this.SetErrorTextBox(txtPassword, this.lblPasswordError, "Mật khẩu không được để trống.");
                 return;
             }
 
-            txtPassword.BorderColor = txtPassword.FocusedBorderColor = CustomColor.MineShaft;
-            this.lblPasswordError.Text = string.Empty;
             this._validatedPassword = true;
+            this.ClearErrorTextBox(txtPassword, this.lblPasswordError);
+        }
+
+        private void SetErrorTextBox(GunaTextBox textBox, Label lblError, string message)
+        {
+            textBox.BorderColor = textBox.FocusedBorderColor = CustomColor.Mandy;
+            lblError.Text = message;
+        }
+
+        private void ClearErrorTextBox(GunaTextBox textBox, Label lblError)
+        {
+            textBox.BorderColor = textBox.FocusedBorderColor = CustomColor.MineShaft;
+            lblError.Text = string.Empty;
         }
     }
 }
