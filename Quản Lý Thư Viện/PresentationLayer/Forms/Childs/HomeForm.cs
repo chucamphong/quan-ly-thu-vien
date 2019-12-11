@@ -24,7 +24,7 @@ namespace PresentationLayer.Forms.Childs
         private void HomeForm_Load(object sender, EventArgs e)
         {
             this.lblHello.Text = $"Xin chào {this.User.Name}!";
-            this.lblSoSachHienCo.Text = BookEntity.Count().ToString();
+            this.lblTotalNumberOfBooks.Text = BookEntity.Count().ToString();
         }
 
         public void Auth(User user)

@@ -51,20 +51,6 @@ namespace PresentationLayer.Forms
             this.AddEventMenuItemClick();
         }
 
-        private void MainForm_SizeChanged(object sender, EventArgs e)
-        {
-            #region Thu gọn sidebar khi chiều rộng của form <= 600
-            if (this.Size.Width <= 600)
-            {
-                this.pnlSidebar.Width = this.pnlTitlebar_2.Width = this.SidebarCollapsedWidth;
-            }
-            else
-            {
-                this.pnlSidebar.Width = this.pnlTitlebar_2.Width = this.SidebarWidth;
-            }
-            #endregion
-        }
-
         private void BtnHome_Click(object sender, EventArgs e)
         {
             HomeForm homeForm = new HomeForm();
@@ -111,6 +97,18 @@ namespace PresentationLayer.Forms
 
             this._childForm.BringToFront();
             this._childForm.Show();
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            if (this.pnlSidebar.Width == this.SidebarWidth)
+            {
+                this.pnlSidebar.Width = this.pnlTitlebar_2.Width = this.SidebarCollapsedWidth;
+            }
+            else
+            {
+                this.pnlSidebar.Width = this.pnlTitlebar_2.Width = this.SidebarWidth;
+            }
         }
     }
 }
