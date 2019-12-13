@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.gnResize = new Guna.UI.WinForms.GunaResize(this.components);
             this.pnlHeader = new Guna.UI.WinForms.GunaLinePanel();
+            this.btnMinimize = new Guna.UI.WinForms.GunaControlBox();
             this.pnlTitlebar_2 = new System.Windows.Forms.Panel();
             this.btnMenu = new Guna.UI.WinForms.GunaPictureBox();
             this.btnMaximize = new Guna.UI.WinForms.GunaControlBox();
@@ -43,7 +44,6 @@
             this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.btnMinimize = new Guna.UI.WinForms.GunaControlBox();
             this.pnlHeader.SuspendLayout();
             this.pnlTitlebar_2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
@@ -67,8 +67,26 @@
             this.pnlHeader.Location = new System.Drawing.Point(3, 3);
             this.pnlHeader.Margin = new System.Windows.Forms.Padding(0);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(794, 47);
+            this.pnlHeader.Size = new System.Drawing.Size(819, 47);
             this.pnlHeader.TabIndex = 0;
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Animated = true;
+            this.btnMinimize.AnimationHoverSpeed = 0.07F;
+            this.btnMinimize.AnimationSpeed = 0.03F;
+            this.btnMinimize.ControlBoxType = Guna.UI.WinForms.FormControlBoxType.MinimizeBox;
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMinimize.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(205)))), ((int)(((byte)(44)))));
+            this.btnMinimize.IconSize = 15F;
+            this.btnMinimize.Location = new System.Drawing.Point(684, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(150)))), ((int)(((byte)(44)))));
+            this.btnMinimize.OnHoverIconColor = System.Drawing.Color.White;
+            this.btnMinimize.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(150)))), ((int)(((byte)(44)))));
+            this.btnMinimize.Size = new System.Drawing.Size(45, 47);
+            this.btnMinimize.TabIndex = 3;
             // 
             // pnlTitlebar_2
             // 
@@ -104,7 +122,7 @@
             this.btnMaximize.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnMaximize.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(39)))));
             this.btnMaximize.IconSize = 15F;
-            this.btnMaximize.Location = new System.Drawing.Point(704, 0);
+            this.btnMaximize.Location = new System.Drawing.Point(729, 0);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.OnHoverBackColor = System.Drawing.Color.Transparent;
             this.btnMaximize.OnHoverIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(39)))));
@@ -121,7 +139,7 @@
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnClose.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(95)))), ((int)(((byte)(98)))));
             this.btnClose.IconSize = 15F;
-            this.btnClose.Location = new System.Drawing.Point(749, 0);
+            this.btnClose.Location = new System.Drawing.Point(774, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(75)))), ((int)(((byte)(98)))));
             this.btnClose.OnHoverIconColor = System.Drawing.Color.White;
@@ -253,33 +271,15 @@
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(238, 50);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(559, 547);
+            this.pnlMain.Size = new System.Drawing.Size(584, 547);
             this.pnlMain.TabIndex = 2;
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Animated = true;
-            this.btnMinimize.AnimationHoverSpeed = 0.07F;
-            this.btnMinimize.AnimationSpeed = 0.03F;
-            this.btnMinimize.ControlBoxType = Guna.UI.WinForms.FormControlBoxType.MinimizeBox;
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMinimize.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(205)))), ((int)(((byte)(44)))));
-            this.btnMinimize.IconSize = 15F;
-            this.btnMinimize.Location = new System.Drawing.Point(659, 0);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(150)))), ((int)(((byte)(44)))));
-            this.btnMinimize.OnHoverIconColor = System.Drawing.Color.White;
-            this.btnMinimize.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(150)))), ((int)(((byte)(44)))));
-            this.btnMinimize.Size = new System.Drawing.Size(45, 47);
-            this.btnMinimize.TabIndex = 3;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.ClientSize = new System.Drawing.Size(825, 600);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pnlSidebar);
             this.Controls.Add(this.pnlHeader);

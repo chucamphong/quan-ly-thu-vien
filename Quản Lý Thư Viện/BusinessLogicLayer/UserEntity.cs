@@ -28,5 +28,10 @@ namespace BusinessLogicLayer
 
             return user;
         }
+
+        public static int Count()
+        {
+            return UserData.Count();
+        }
     }
 }

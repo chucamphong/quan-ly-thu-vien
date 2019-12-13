@@ -23,8 +23,10 @@ namespace PresentationLayer.Forms.Childs
         private void HomeForm_Load(object sender, EventArgs e)
         {
             this.lblHello.Text = $"Xin chào {Auth.User.Name}!";
-            this.lblTongSoSach.Text = BookEntity.Count().ToString();
-            this.lblTongSoNhaPhatHanh.Text = PublisherEntity.Count().ToString();
+            this.grdCardTongSoSach.Content = BookEntity.Count().ToString();
+            this.grdCardTongSoNhaPhatHanh.Content = PublisherEntity.Count().ToString();
+            this.grdCardTongSoNguoiDung.Content = UserEntity.Count().ToString();
+            this.grdCardTongSoTacGia.Content = AuthorEntity.Count().ToString();
         }
     }
 }

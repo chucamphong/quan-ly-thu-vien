@@ -15,8 +15,13 @@ namespace DataAccessLayer.Data
         /// <returns>Thông tin người dùng nếu tìm thấy, ngược lại trả về null</returns>
         public static User FindByEmailAndPassword(string email, string password)
         {
-            return Context.Users.SingleOrDefault(user => user.Email.Equals(email) &&
+            return Context.Users.AsNoTracking().SingleOrDefault(user => user.Email.Equals(email) &&
                                                          user.Password.Equals(password));
+        }
+
+        public static int Count()
+        {
+            return Context.Users.AsNoTracking().Count();
         }
     }
 }
