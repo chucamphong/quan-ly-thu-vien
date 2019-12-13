@@ -1,12 +1,12 @@
 ﻿using BusinessLogicLayer;
+using Core;
 using Guna.UI.WinForms;
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Security.Authentication;
-using Helper.Validation;
-using Helper.Color;
-using DataTransferObject.Models;
+using Core.Validation;
+using DataTransferObject;
 
 namespace PresentationLayer.Forms
 {
@@ -14,7 +14,6 @@ namespace PresentationLayer.Forms
     {
         private bool _validatedUsername = false;
         private bool _validatedPassword = false;
-        public delegate void SendUserInfo(User user);
 
         public LoginForm()
         {
@@ -48,11 +47,9 @@ namespace PresentationLayer.Forms
                 
                 loadingForm.Close();
 
-                var mainForm = new MainForm();
+                Auth.User = user;
 
-                new SendUserInfo(mainForm.Auth)(user);
-                
-                mainForm.ShowDialog();
+                new MainForm().ShowDialog();
 
                 this.Close();
             }

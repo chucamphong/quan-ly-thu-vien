@@ -1,6 +1,6 @@
 ﻿using DataAccessLayer.Data;
-using DataTransferObject.Models;
-using Helper.Crypto;
+using DataTransferObject;
+using Core.Crypto;
 using System.Threading.Tasks;
 using System.Security.Authentication;
 

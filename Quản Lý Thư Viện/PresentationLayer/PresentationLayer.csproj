@@ -149,9 +149,9 @@
       <Project>{a38a512a-7dd7-4841-95b6-189f67bd9de7}</Project>
       <Name>DataTransferObject</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Helper\Helper.csproj">
+    <ProjectReference Include="..\Helper\Core.csproj">
       <Project>{806c6dad-55c5-4b77-9fc4-a8dfbbb027ff}</Project>
-      <Name>Helper</Name>
+      <Name>Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

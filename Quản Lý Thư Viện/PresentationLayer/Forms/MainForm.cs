@@ -1,6 +1,6 @@
-﻿using DataTransferObject.Models;
+﻿using DataTransferObject;
 using Guna.UI.WinForms;
-using Helper.Color;
+using Core;
 using PresentationLayer.Forms.Childs;
 using System;
 using System.Collections.Generic;
@@ -28,18 +28,11 @@ namespace PresentationLayer.Forms
         /// </summary>
         private readonly int SidebarCollapsedWidth = 60;
 
-        private User User;
-
         public delegate void SendUserInfo(User user);
 
         public MainForm()
         {
             InitializeComponent();
-        }
-
-        public void Auth(User user)
-        {
-            this.User = user;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -53,9 +46,7 @@ namespace PresentationLayer.Forms
 
         private void BtnHome_Click(object sender, EventArgs e)
         {
-            HomeForm homeForm = new HomeForm();
-            new SendUserInfo(homeForm.Auth)(this.User);
-            this.SetChildForm(homeForm);
+            this.SetChildForm(new HomeForm());
         }
 
         /// <summary>
@@ -99,7 +90,12 @@ namespace PresentationLayer.Forms
             this._childForm.Show();
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Thu gọn / Mở rộng Sidebar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnMenu_Click(object sender, EventArgs e)
         {
             if (this.pnlSidebar.Width == this.SidebarWidth)
             {

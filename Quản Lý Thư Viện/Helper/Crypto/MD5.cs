@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Helper.Crypto
+namespace Core.Crypto
 {
     public class MD5
     {

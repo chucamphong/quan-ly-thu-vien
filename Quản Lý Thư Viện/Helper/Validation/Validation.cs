@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Helper.Validation
+namespace Core.Validation
 {
     public class Validation
     {

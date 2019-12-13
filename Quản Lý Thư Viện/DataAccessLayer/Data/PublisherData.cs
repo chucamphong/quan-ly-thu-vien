@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Data
 {
-    public sealed class BookData
+    public sealed class PublisherData
     {
         private static readonly LibraryManagementSystemContext Context = new LibraryManagementSystemContext();
 

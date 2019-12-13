@@ -1,7 +1,7 @@
 ﻿namespace DataAccessLayer.Migrations
 {
     using DataAccessLayer.Data;
-    using DataTransferObject.Models;
+    using DataTransferObject;
     using System.Collections.Generic;
     using System.Data.Entity.Migrations;
 

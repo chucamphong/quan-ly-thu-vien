@@ -1,4 +1,4 @@
-﻿namespace Helper.Color
+﻿namespace Core
 {
     using System;
     using System.Collections.Generic;

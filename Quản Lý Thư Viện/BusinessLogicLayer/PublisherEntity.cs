@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer
 {
-    public class BookEntity
+    public class PublisherEntity
     {
         public static int Count()
         {
-            return BookData.Count();
+            return PublisherData.Count();
         }
     }
 }

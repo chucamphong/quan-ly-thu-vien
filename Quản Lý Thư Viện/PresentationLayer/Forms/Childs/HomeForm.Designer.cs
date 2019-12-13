@@ -32,7 +32,7 @@
             this.lblHello = new System.Windows.Forms.Label();
             this.pnlSoSachHienCo = new Guna.UI.WinForms.GunaGradient2Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblTotalNumberOfBooks = new System.Windows.Forms.Label();
+            this.lblTongSoSach = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.gunaGradient2Panel1 = new Guna.UI.WinForms.GunaGradient2Panel();
@@ -43,7 +43,7 @@
             this.pnlMain = new System.Windows.Forms.FlowLayoutPanel();
             this.gunaGradient2Panel2 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblTongSoNhaPhatHanh = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.gunaGradient2Panel3 = new Guna.UI.WinForms.GunaGradient2Panel();
@@ -103,7 +103,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lblTotalNumberOfBooks);
+            this.panel2.Controls.Add(this.lblTongSoSach);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 52);
             this.panel2.Name = "panel2";
@@ -111,16 +111,16 @@
             this.panel2.Size = new System.Drawing.Size(244, 69);
             this.panel2.TabIndex = 1;
             // 
-            // lblTotalNumberOfBooks
+            // lblTongSoSach
             // 
-            this.lblTotalNumberOfBooks.AutoSize = true;
-            this.lblTotalNumberOfBooks.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTotalNumberOfBooks.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalNumberOfBooks.Location = new System.Drawing.Point(15, 10);
-            this.lblTotalNumberOfBooks.Name = "lblTotalNumberOfBooks";
-            this.lblTotalNumberOfBooks.Size = new System.Drawing.Size(143, 40);
-            this.lblTotalNumberOfBooks.TabIndex = 0;
-            this.lblTotalNumberOfBooks.Text = "2.000.000";
+            this.lblTongSoSach.AutoSize = true;
+            this.lblTongSoSach.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTongSoSach.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongSoSach.Location = new System.Drawing.Point(15, 10);
+            this.lblTongSoSach.Name = "lblTongSoSach";
+            this.lblTongSoSach.Size = new System.Drawing.Size(143, 40);
+            this.lblTongSoSach.TabIndex = 0;
+            this.lblTongSoSach.Text = "2.000.000";
             // 
             // panel1
             // 
@@ -227,7 +227,7 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.label4);
+            this.panel5.Controls.Add(this.lblTongSoNhaPhatHanh);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 52);
             this.panel5.Name = "panel5";
@@ -235,16 +235,16 @@
             this.panel5.Size = new System.Drawing.Size(244, 69);
             this.panel5.TabIndex = 1;
             // 
-            // label4
+            // lblTongSoNhaPhatHanh
             // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 40);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "500.625";
+            this.lblTongSoNhaPhatHanh.AutoSize = true;
+            this.lblTongSoNhaPhatHanh.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTongSoNhaPhatHanh.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongSoNhaPhatHanh.Location = new System.Drawing.Point(15, 10);
+            this.lblTongSoNhaPhatHanh.Name = "lblTongSoNhaPhatHanh";
+            this.lblTongSoNhaPhatHanh.Size = new System.Drawing.Size(120, 40);
+            this.lblTongSoNhaPhatHanh.TabIndex = 0;
+            this.lblTongSoNhaPhatHanh.Text = "500.625";
             // 
             // panel6
             // 
@@ -371,7 +371,7 @@
         private System.Windows.Forms.Label lblHello;
         private Guna.UI.WinForms.GunaGradient2Panel pnlSoSachHienCo;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblTotalNumberOfBooks;
+        private System.Windows.Forms.Label lblTongSoSach;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel1;
@@ -382,7 +382,7 @@
         private System.Windows.Forms.FlowLayoutPanel pnlMain;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel2;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTongSoNhaPhatHanh;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label5;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel3;

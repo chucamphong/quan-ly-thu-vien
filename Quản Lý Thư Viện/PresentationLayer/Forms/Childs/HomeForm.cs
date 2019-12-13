@@ -1,5 +1,6 @@
 ﻿using BusinessLogicLayer;
-using DataTransferObject.Models;
+using Core;
+using DataTransferObject;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +15,6 @@ namespace PresentationLayer.Forms.Childs
 {
     public partial class HomeForm : Form
     {
-        private User User;
-
         public HomeForm()
         {
             InitializeComponent();
@@ -23,13 +22,9 @@ namespace PresentationLayer.Forms.Childs
         
         private void HomeForm_Load(object sender, EventArgs e)
         {
-            this.lblHello.Text = $"Xin chào {this.User.Name}!";
-            this.lblTotalNumberOfBooks.Text = BookEntity.Count().ToString();
-        }
-
-        public void Auth(User user)
-        {
-            this.User = user;
+            this.lblHello.Text = $"Xin chào {Auth.User.Name}!";
+            this.lblTongSoSach.Text = BookEntity.Count().ToString();
+            this.lblTongSoNhaPhatHanh.Text = PublisherEntity.Count().ToString();
         }
     }
 }

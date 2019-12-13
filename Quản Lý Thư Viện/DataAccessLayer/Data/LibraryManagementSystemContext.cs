@@ -1,4 +1,4 @@
-﻿using DataTransferObject.Models;
+﻿using DataTransferObject;
 using System.Data.Entity;
 
 namespace DataAccessLayer.Data
