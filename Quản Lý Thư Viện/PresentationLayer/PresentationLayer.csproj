@@ -154,13 +154,13 @@
       <Project>{53eb4fab-5607-48d3-bbfd-4ebd45824742}</Project>
       <Name>BusinessLogicLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{806c6dad-55c5-4b77-9fc4-a8dfbbb027ff}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataTransferObject\DataTransferObject.csproj">
       <Project>{a38a512a-7dd7-4841-95b6-189f67bd9de7}</Project>
       <Name>DataTransferObject</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Helper\Core.csproj">
-      <Project>{806c6dad-55c5-4b77-9fc4-a8dfbbb027ff}</Project>
-      <Name>Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
