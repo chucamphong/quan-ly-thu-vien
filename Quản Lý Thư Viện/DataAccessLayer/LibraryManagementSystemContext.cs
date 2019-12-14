@@ -1,9 +1,9 @@
 ﻿using DataTransferObject;
 using System.Data.Entity;
 
-namespace DataAccessLayer.Data
+namespace DataAccessLayer
 {
-    class LibraryManagementSystemContext : DbContext
+    public class LibraryManagementSystemContext : DbContext
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Book> Books { get; set; }

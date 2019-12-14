@@ -11,7 +11,10 @@ namespace BusinessLogicLayer
     {
         public static int Count()
         {
-            return PublisherData.Count();
+            using (var publisherData = new PublisherData())
+            {
+                return publisherData.Count();
+            }
         }
     }
 }

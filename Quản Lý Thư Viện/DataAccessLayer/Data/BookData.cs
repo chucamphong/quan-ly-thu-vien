@@ -7,13 +7,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Data
 {
-    public sealed class BookData
+    public sealed class BookData : BaseData<Book>
     {
-        private static readonly LibraryManagementSystemContext Context = new LibraryManagementSystemContext();
-
-        public static int Count()
-        {
-            return Context.Books.Count();
-        }
+        // 
     }
 }
