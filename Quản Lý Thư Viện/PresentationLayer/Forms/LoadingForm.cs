@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PresentationLayer.Forms
@@ -14,12 +7,12 @@ namespace PresentationLayer.Forms
     {
         public LoadingForm()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         private void LoadingForm_Load(object sender, EventArgs e)
         {
-            Guna.UI.Lib.GraphicsHelper.ShadowForm(sender as LoadingForm);
+            Guna.UI.Lib.GraphicsHelper.ShadowForm(sender as Form);
         }
     }
 }

@@ -1,15 +1,7 @@
-﻿using BusinessLogicLayer;
-using Core;
-using DataTransferObject;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+using BusinessLogicLayer;
+using Core;
 
 namespace PresentationLayer.Forms.Childs
 {
@@ -17,9 +9,9 @@ namespace PresentationLayer.Forms.Childs
     {
         public HomeScreen()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
-        
+
         private void HomeForm_Load(object sender, EventArgs e)
         {
             this.lblHello.Text = $"Xin chào {Auth.User.Name}!";

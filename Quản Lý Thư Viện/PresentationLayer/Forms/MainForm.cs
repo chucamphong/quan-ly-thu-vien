@@ -1,38 +1,27 @@
-﻿using DataTransferObject;
-using Guna.UI.WinForms;
-using Core;
-using PresentationLayer.Forms.Childs;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+using Guna.UI.Lib;
+using PresentationLayer.Forms.Childs;
 
 namespace PresentationLayer.Forms
 {
     public partial class MainForm : Form
     {
-        private Form _childForm;
-        
         /// <summary>
-        /// Chiều rộng mặc định của Sidebar
+        /// Chiều rộng mặc định của Sidebar.
         /// </summary>
-        private readonly int SidebarWidth = 235;
+        private readonly int sidebarWidth = 235;
 
         /// <summary>
-        /// Chiều rộng thu nhỏ của Sidebar
+        /// Chiều rộng thu nhỏ của Sidebar.
         /// </summary>
-        private readonly int SidebarCollapsedWidth = 60;
+        private readonly int sidebarCollapsedWidth = 60;
 
-        public delegate void SendUserInfo(User user);
+        private Form childForm;
 
         public MainForm()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -42,6 +31,11 @@ namespace PresentationLayer.Forms
 
             // Thêm sự kiện Click cho các nút nhấn trên Sidebar
             this.AddEventMenuItemClick();
+        }
+
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            GraphicsHelper.ShadowForm(sender as Form);
         }
 
         private void BtnHome_Click(object sender, EventArgs e)
@@ -60,7 +54,7 @@ namespace PresentationLayer.Forms
         }
 
         /// <summary>
-        /// Tạo sự kiện click chuột cho các nút nhấn ở phần Sidebar
+        /// Tạo sự kiện click chuột cho các nút nhấn ở phần Sidebar.
         /// </summary>
         private void AddEventMenuItemClick()
         {
@@ -76,7 +70,7 @@ namespace PresentationLayer.Forms
             // Thêm sự kiện click cho các nút nhấn
             foreach (Control control in this.pnlSidebar.Controls)
             {
-                if (control is GunaButton button)
+                if (control is Control button)
                 {
                     button.Click += new EventHandler(MenuItem_Click);
                 }
@@ -84,36 +78,34 @@ namespace PresentationLayer.Forms
         }
 
         /// <summary>
-        /// Tạo form con
+        /// Hiển thị form con.
         /// </summary>
-        /// <param name="childForm"></param>
+        /// <param name="childForm">Form con cần hiển thị.</param>
         private void SetChildForm(Form childForm)
         {
-            this._childForm = childForm;
-            this._childForm.TopLevel = false;
-            this._childForm.Dock = DockStyle.Fill;
+            this.childForm = childForm;
+            this.childForm.TopLevel = false;
+            this.childForm.Dock = DockStyle.Fill;
 
-            this.pnlMain.Controls.Add(this._childForm);
-            this.pnlMain.Tag = this._childForm;
+            this.pnlMain.Controls.Add(this.childForm);
+            this.pnlMain.Tag = this.childForm;
 
-            this._childForm.BringToFront();
-            this._childForm.Show();
+            this.childForm.BringToFront();
+            this.childForm.Show();
         }
 
         /// <summary>
-        /// Thu gọn / Mở rộng Sidebar
+        /// Thu gọn / Mở rộng Sidebar.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void BtnMenu_Click(object sender, EventArgs e)
         {
-            if (this.pnlSidebar.Width == this.SidebarWidth)
+            if (this.pnlSidebar.Width == this.sidebarWidth)
             {
-                this.pnlSidebar.Width = this.pnlTitlebar_2.Width = this.SidebarCollapsedWidth;
+                this.pnlSidebar.Width = this.pnlTitlebar_2.Width = this.sidebarCollapsedWidth;
             }
             else
             {
-                this.pnlSidebar.Width = this.pnlTitlebar_2.Width = this.SidebarWidth;
+                this.pnlSidebar.Width = this.pnlTitlebar_2.Width = this.sidebarWidth;
             }
         }
     }

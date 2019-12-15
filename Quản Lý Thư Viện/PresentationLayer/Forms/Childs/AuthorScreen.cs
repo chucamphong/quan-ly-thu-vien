@@ -9,9 +9,6 @@ using DataTransferObject;
 
 namespace PresentationLayer.Forms.Childs
 {
-    /// <summary>
-    /// Giao diện quản lý tác giả.
-    /// </summary>
     public partial class AuthorScreen : Form
     {
         /// <summary>
@@ -24,9 +21,6 @@ namespace PresentationLayer.Forms.Childs
         /// </summary>
         private Author oldAuthorData;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AuthorScreen"/> class.
-        /// </summary>
         public AuthorScreen()
         {
             this.InitializeComponent();

@@ -33,22 +33,22 @@
             this.pnlHeader = new Guna.UI.WinForms.GunaLinePanel();
             this.btnMinimize = new Guna.UI.WinForms.GunaControlBox();
             this.pnlTitlebar_2 = new System.Windows.Forms.Panel();
+            this.btnMenu = new Guna.UI.WinForms.GunaPictureBox();
             this.btnMaximize = new Guna.UI.WinForms.GunaControlBox();
             this.btnClose = new Guna.UI.WinForms.GunaControlBox();
             this.drgTitleBar = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.drgTitleBar_2 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.pnlSidebar = new System.Windows.Forms.Panel();
-            this.sideBarActived = new System.Windows.Forms.Panel();
-            this.pnlMain = new System.Windows.Forms.Panel();
             this.btnAuthorManagement = new Guna.UI.WinForms.GunaButton();
             this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
+            this.sideBarActived = new System.Windows.Forms.Panel();
             this.btnBookManagement = new Guna.UI.WinForms.GunaButton();
             this.btnHome = new Guna.UI.WinForms.GunaButton();
-            this.btnMenu = new Guna.UI.WinForms.GunaPictureBox();
+            this.pnlMain = new System.Windows.Forms.Panel();
             this.pnlHeader.SuspendLayout();
             this.pnlTitlebar_2.SuspendLayout();
-            this.pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
+            this.pnlSidebar.SuspendLayout();
             this.SuspendLayout();
             // 
             // gnResize
@@ -98,6 +98,20 @@
             this.pnlTitlebar_2.Name = "pnlTitlebar_2";
             this.pnlTitlebar_2.Size = new System.Drawing.Size(235, 47);
             this.pnlTitlebar_2.TabIndex = 2;
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.BaseColor = System.Drawing.Color.White;
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnMenu.Image = global::PresentationLayer.Properties.Resources.Menu;
+            this.btnMenu.Location = new System.Drawing.Point(0, 0);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(63, 47);
+            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnMenu.TabIndex = 0;
+            this.btnMenu.TabStop = false;
+            this.btnMenu.Click += new System.EventHandler(this.BtnMenu_Click);
             // 
             // btnMaximize
             // 
@@ -158,23 +172,6 @@
             this.pnlSidebar.Size = new System.Drawing.Size(235, 547);
             this.pnlSidebar.TabIndex = 1;
             // 
-            // sideBarActived
-            // 
-            this.sideBarActived.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(161)))), ((int)(((byte)(156)))));
-            this.sideBarActived.Location = new System.Drawing.Point(0, 0);
-            this.sideBarActived.Margin = new System.Windows.Forms.Padding(0);
-            this.sideBarActived.Name = "sideBarActived";
-            this.sideBarActived.Size = new System.Drawing.Size(4, 50);
-            this.sideBarActived.TabIndex = 5;
-            // 
-            // pnlMain
-            // 
-            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(238, 50);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(584, 547);
-            this.pnlMain.TabIndex = 2;
-            // 
             // btnAuthorManagement
             // 
             this.btnAuthorManagement.Animated = true;
@@ -233,6 +230,15 @@
             this.gunaButton2.Text = "Tài khoản";
             this.gunaButton2.TextOffsetX = 10;
             this.gunaButton2.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
+            // 
+            // sideBarActived
+            // 
+            this.sideBarActived.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(161)))), ((int)(((byte)(156)))));
+            this.sideBarActived.Location = new System.Drawing.Point(0, 0);
+            this.sideBarActived.Margin = new System.Windows.Forms.Padding(0);
+            this.sideBarActived.Name = "sideBarActived";
+            this.sideBarActived.Size = new System.Drawing.Size(4, 50);
+            this.sideBarActived.TabIndex = 5;
             // 
             // btnBookManagement
             // 
@@ -294,19 +300,13 @@
             this.btnHome.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
             this.btnHome.Click += new System.EventHandler(this.BtnHome_Click);
             // 
-            // btnMenu
+            // pnlMain
             // 
-            this.btnMenu.BaseColor = System.Drawing.Color.White;
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnMenu.Image = global::PresentationLayer.Properties.Resources.Menu;
-            this.btnMenu.Location = new System.Drawing.Point(0, 0);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(63, 47);
-            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnMenu.TabIndex = 0;
-            this.btnMenu.TabStop = false;
-            this.btnMenu.Click += new System.EventHandler(this.BtnMenu_Click);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(238, 50);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(584, 547);
+            this.pnlMain.TabIndex = 2;
             // 
             // MainForm
             // 
@@ -323,11 +323,12 @@
             this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeForm";
+            this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlTitlebar_2.ResumeLayout(false);
-            this.pnlSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
+            this.pnlSidebar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

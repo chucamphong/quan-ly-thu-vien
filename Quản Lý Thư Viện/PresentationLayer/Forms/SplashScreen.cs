@@ -7,12 +7,12 @@ namespace PresentationLayer.Forms
     {
         public SplashScreen()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         private void LoadingForm_Load(object sender, EventArgs e)
         {
-            Guna.UI.Lib.GraphicsHelper.ShadowForm(sender as SplashScreen);
+            Guna.UI.Lib.GraphicsHelper.ShadowForm(sender as Form);
         }
     }
 }
