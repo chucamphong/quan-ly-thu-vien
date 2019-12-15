@@ -65,11 +65,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Childs\HomeScreen.cs">
+    <Compile Include="Forms\Childs\HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Childs\HomeScreen.Designer.cs">
-      <DependentUpon>HomeScreen.cs</DependentUpon>
+    <Compile Include="Forms\Childs\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Controls\GradientCard.cs">
       <SubType>UserControl</SubType>
@@ -103,8 +103,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Childs\HomeScreen.resx">
-      <DependentUpon>HomeScreen.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Childs\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Controls\GradientCard.resx">
       <DependentUpon>GradientCard.cs</DependentUpon>

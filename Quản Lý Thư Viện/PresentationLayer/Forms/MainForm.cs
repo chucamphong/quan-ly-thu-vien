@@ -46,7 +46,7 @@ namespace PresentationLayer.Forms
 
         private void BtnHome_Click(object sender, EventArgs e)
         {
-            this.SetChildForm(new HomeScreen());
+            this.SetChildForm(new HomeForm());
         }
 
         /// <summary>

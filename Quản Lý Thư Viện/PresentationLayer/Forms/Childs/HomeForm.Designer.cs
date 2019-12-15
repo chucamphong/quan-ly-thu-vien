@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer.Forms.Childs
 {
-    partial class HomeScreen
+    partial class HomeForm
     {
         /// <summary>
         /// Required designer variable.
