@@ -12,14 +12,12 @@ namespace PresentationLayer.Forms
 {
     public partial class LoginForm : Form
     {
-        private readonly MainForm _mainForm;
         private bool _validatedUsername = false;
         private bool _validatedPassword = false;
 
-        public LoginForm(MainForm mainForm)
+        public LoginForm()
         {
             InitializeComponent();
-            this._mainForm = mainForm;
         }
 
         private void LoginForm_Activated(object sender, EventArgs e)
@@ -51,7 +49,7 @@ namespace PresentationLayer.Forms
 
                 Auth.User = user;
 
-                this._mainForm.ShowDialog();
+                new MainForm().ShowDialog();
 
                 this.Close();
             }
