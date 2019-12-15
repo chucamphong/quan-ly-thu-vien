@@ -108,14 +108,18 @@
 
         private List<Author> AuthorsTableData()
         {
-            var faker = new Faker<Author>()
-                                .RuleFor(t => t.Name, f => f.Random.Hash(10).ToString() + f.Name.FullName());
-            return faker.UseSeed(Randomizer.Seed.Next()).Generate(20000);
+            //int orderIds = 0;
 
-            //return new List<Author> {
-            //    new Author { Name = "Aoyama Goushou" },
-            //    new Author { Name = "Fujiko Fujio" },
-            //};
+            //var faker = new Faker<Author>("vi")
+            //                    .RuleFor(t => t.Id, f => orderIds++)
+            //                    .RuleFor(t => t.Name, f => f.Random.Hash(10).ToString() + f.Name.FullName());
+
+            //return faker.UseSeed(Randomizer.Seed.Next()).Generate(100);
+
+            return new List<Author> {
+                new Author { Name = "Aoyama Goushou" },
+                new Author { Name = "Fujiko Fujio" },
+            };
         }
 
         private List<Publisher> PublishersTableData()
