@@ -10,7 +10,7 @@ namespace BusinessLogicLayer
 {
     public class AuthorLogic
     {
-        public static IEnumerable<Author> GetAll()
+        public static List<Author> GetAll()
         {
             using (var authorData = new AuthorData())
             {
@@ -19,7 +19,7 @@ namespace BusinessLogicLayer
             }
         }
 
-        public static IEnumerable<Author> FindByName(string name)
+        public static List<Author> FindByName(string name)
         {
             using (var authorData = new AuthorData())
             {
@@ -41,6 +41,15 @@ namespace BusinessLogicLayer
             using (var authorData = new AuthorData())
             {
                 authorData.Update(author);
+                authorData.Save();
+            }
+        }
+
+        public static void Delete(Author author)
+        {
+            using (var authorData = new AuthorData())
+            {
+                authorData.Delete(author);
                 authorData.Save();
             }
         }

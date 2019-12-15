@@ -23,6 +23,8 @@ namespace PresentationLayer.Forms
         private void LoginForm_Activated(object sender, EventArgs e)
         {
             Guna.UI.Lib.GraphicsHelper.ShadowForm(sender as LoginForm);
+            txtUsername.Text = "chucamphong@gmail.com";
+            txtPassword.Text = "123456";
         }
 
         private async void BtnLogin_Click(object sender, EventArgs e)

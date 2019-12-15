@@ -75,5 +75,20 @@ namespace DataAccessLayer
         {
             return this.Context.SaveChanges() > 0 ? true : false;
         }
+
+        public void Insert(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(TEntity entity)
+        {
+            if (this.Context.Entry(entity).State == EntityState.Detached)
+            {
+                this.DbSet.Attach(entity);
+            }
+
+            this.DbSet.Remove(entity);
+        }
     }
 }
