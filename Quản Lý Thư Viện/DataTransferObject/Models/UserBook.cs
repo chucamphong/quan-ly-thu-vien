@@ -7,10 +7,10 @@ namespace DataTransferObject
     public class UserBook
     {
         [Key, Column(Order = 1)]
-        public Guid UserId { get; set; }
+        public int UserId { get; set; }
 
         [Key, Column(Order = 2)]
-        public Guid BookId { get; set; }
+        public int BookId { get; set; }
 
         public User User { get; set; }
 

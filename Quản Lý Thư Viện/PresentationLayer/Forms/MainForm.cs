@@ -49,6 +49,16 @@ namespace PresentationLayer.Forms
             this.SetChildForm(new HomeScreen());
         }
 
+        private void BtnBookManagement_Click(object sender, EventArgs e)
+        {
+            this.SetChildForm(new BookScreen());
+        }
+
+        private void BtnAuthorManagement_Click(object sender, EventArgs e)
+        {
+            this.SetChildForm(new AuthorScreen());
+        }
+
         /// <summary>
         /// Tạo sự kiện click chuột cho các nút nhấn ở phần Sidebar
         /// </summary>

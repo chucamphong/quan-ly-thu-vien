@@ -8,8 +8,8 @@ namespace DataTransferObject
     [Table("Users")]
     public class User
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
+        [Key]
+        public int Id { get; set; }
 
         [Required, MinLength(8), MaxLength(30)]
         public string Name { get; set; }

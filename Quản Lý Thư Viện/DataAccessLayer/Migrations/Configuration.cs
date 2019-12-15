@@ -1,5 +1,6 @@
 ﻿namespace DataAccessLayer.Migrations
 {
+    using Bogus;
     using DataAccessLayer.Data;
     using DataTransferObject;
     using System.Collections.Generic;
@@ -107,10 +108,14 @@
 
         private List<Author> AuthorsTableData()
         {
-            return new List<Author> {
-                new Author { Name = "Aoyama Goushou" },
-                new Author { Name = "Fujiko Fujio" }
-            };
+            var faker = new Faker<Author>()
+                                .RuleFor(t => t.Name, f => f.Random.Hash(10).ToString() + f.Name.FullName());
+            return faker.UseSeed(Randomizer.Seed.Next()).Generate(20000);
+
+            //return new List<Author> {
+            //    new Author { Name = "Aoyama Goushou" },
+            //    new Author { Name = "Fujiko Fujio" },
+            //};
         }
 
         private List<Publisher> PublishersTableData()

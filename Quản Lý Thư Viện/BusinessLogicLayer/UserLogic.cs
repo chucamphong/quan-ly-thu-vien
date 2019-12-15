@@ -6,7 +6,7 @@ using System.Security.Authentication;
 
 namespace BusinessLogicLayer
 {
-    public class UserEntity
+    public class UserLogic
     {
         /// <summary>
         /// Kiểm tra tài khoản và mật khẩu

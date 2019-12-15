@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlHello = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblHello = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.grdCardTongSoSach = new PresentationLayer.Forms.Controls.GradientCard();
             this.grdCardTongSoNhaPhatHanh = new PresentationLayer.Forms.Controls.GradientCard();
             this.grdCardTongSoNguoiDung = new PresentationLayer.Forms.Controls.GradientCard();
@@ -48,19 +48,6 @@
             this.pnlHello.Size = new System.Drawing.Size(1105, 72);
             this.pnlHello.TabIndex = 0;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.Controls.Add(this.grdCardTongSoSach);
-            this.flowLayoutPanel1.Controls.Add(this.grdCardTongSoNhaPhatHanh);
-            this.flowLayoutPanel1.Controls.Add(this.grdCardTongSoNguoiDung);
-            this.flowLayoutPanel1.Controls.Add(this.grdCardTongSoTacGia);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(14, 72);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1105, 131);
-            this.flowLayoutPanel1.TabIndex = 1;
-            // 
             // lblHello
             // 
             this.lblHello.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -71,6 +58,20 @@
             this.lblHello.TabIndex = 0;
             this.lblHello.Text = "Xin chào Chu Cẩm Phong!";
             this.lblHello.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.Controls.Add(this.grdCardTongSoSach);
+            this.flowLayoutPanel1.Controls.Add(this.grdCardTongSoNhaPhatHanh);
+            this.flowLayoutPanel1.Controls.Add(this.grdCardTongSoNguoiDung);
+            this.flowLayoutPanel1.Controls.Add(this.grdCardTongSoTacGia);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(14, 72);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1105, 131);
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // grdCardTongSoSach
             // 
@@ -124,7 +125,7 @@
             this.grdCardTongSoTacGia.Size = new System.Drawing.Size(270, 125);
             this.grdCardTongSoTacGia.TabIndex = 2;
             // 
-            // HomeForm
+            // HomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -139,7 +140,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "HomeForm";
+            this.Name = "HomeScreen";
             this.Padding = new System.Windows.Forms.Padding(14, 0, 14, 14);
             this.Load += new System.EventHandler(this.HomeForm_Load);
             this.pnlHello.ResumeLayout(false);

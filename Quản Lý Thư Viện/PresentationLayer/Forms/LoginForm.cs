@@ -41,7 +41,7 @@ namespace PresentationLayer.Forms
                 btnLogin.Enabled = false;
                 loadingForm.Show();
 
-                User user = await UserEntity.Login(txtUsername.Text, txtPassword.Text);
+                User user = await UserLogic.Login(txtUsername.Text, txtPassword.Text);
 
                 this.Hide();
                 
