@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.Forms.Childs
 {
-    public partial class HomeForm : Form
+    public partial class HomeScreen : Form
     {
-        public HomeForm()
+        public HomeScreen()
         {
             InitializeComponent();
         }
