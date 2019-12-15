@@ -64,5 +64,16 @@ namespace DataAccessLayer
                 this.Context.Dispose();
             }
         }
+
+        public void Update(TEntity entity)
+        {
+            this.DbSet.Attach(entity);
+            this.Context.Entry(entity).State = EntityState.Modified;
+        }
+
+        public bool Save()
+        {
+            return this.Context.SaveChanges() > 0 ? true : false;
+        }
     }
 }

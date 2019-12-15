@@ -17,6 +17,10 @@ namespace DataAccessLayer
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
             string includeProperties = "");
 
+        void Update(TEntity entity);
+
         int Count();
+
+        bool Save();
     }
 }

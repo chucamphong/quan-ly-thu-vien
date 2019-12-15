@@ -2,6 +2,7 @@
 using DataTransferObject;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -9,22 +10,20 @@ namespace BusinessLogicLayer
 {
     public class AuthorLogic
     {
-        public static IEnumerable<object> GetAll()
+        public static IEnumerable<Author> GetAll()
         {
             using (var authorData = new AuthorData())
             {
                 return authorData.GetAll()
-                                 .Select(author => new { author.Id, author.Name })
                                  .ToList();
             }
         }
 
-        public static IEnumerable<object> FindByName(string name)
+        public static IEnumerable<Author> FindByName(string name)
         {
             using (var authorData = new AuthorData())
             {
                 return authorData.Get(author => author.Name.Contains(name))
-                                 .Select(author => new { author.Id, author.Name })
                                  .ToList();
             }
         }
@@ -34,6 +33,15 @@ namespace BusinessLogicLayer
             using (var authorData = new AuthorData())
             {
                 return authorData.Count();
+            }
+        }
+
+        public static void Update(Author author)
+        {
+            using (var authorData = new AuthorData())
+            {
+                authorData.Update(author);
+                authorData.Save();
             }
         }
     }
