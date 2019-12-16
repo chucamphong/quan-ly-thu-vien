@@ -55,6 +55,9 @@ namespace DataAccessLayer
         /// <summary>
         /// Thực hiện truy vấn lên cơ sở dữ liệu, sử dụng khi thực hiện các truy vấn Insert, Update, Delete.
         /// </summary>
+        /// <exception cref="System.Data.Entity.Infrastructure.DbUpdateException">Đã xảy ra lỗi khi gửi truy vấn đến cơ sở dữ liệu.</exception>
+        /// <exception cref="System.Data.Entity.Infrastructure.DbUpdateConcurrencyException">Bản ghi đã bị thay đổi trước khi truy vấn.</exception>
+        /// /// <exception cref="System.Data.Entity.Validation.DbEntityValidationException">Câu truy vấn đã bị hủy bỏ vì không hợp lệ.</exception>
         /// <returns><see langword="true"/> nếu thành công và <see langword="false"/> nếu thất bại.</returns>
         bool Save();
     }

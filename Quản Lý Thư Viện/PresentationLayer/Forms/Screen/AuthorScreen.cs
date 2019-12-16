@@ -62,32 +62,12 @@ namespace PresentationLayer.Forms.Screen
 
             if (authors.Count == 0)
             {
-                DialogResult dialogResult = MessageBox.Show($"Không tìm thấy tác giả [{authorName}]\nBạn có muốn tạo tác giả này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    this.ShowAuthorInsertForm();
-                }
+                MessageBox.Show($"Không tìm thấy tác giả [{authorName}]", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             }
             else
             {
                 this.authorsBindingSource.DataSource = authors;
             }
-        }
-
-        private void ShowAuthorInsertForm()
-        {
-            AuthorInsertForm authorInsertForm = new AuthorInsertForm
-            {
-                SendAuthor = this.InsertAuthor,
-            };
-            authorInsertForm.ShowDialog();
-        }
-
-        private void InsertAuthor(Author author)
-        {
-            AuthorLogic.Insert(author);
-            this.txtSearch.Text = string.Empty;
-            this.AllAuthor();
         }
 
         /// <summary>
@@ -132,7 +112,7 @@ namespace PresentationLayer.Forms.Screen
                 // Trường hợp tên tác giả bị trùng
                 if (exception.InnerException.InnerException is SqlException innerException && (innerException.Number == 2627 || innerException.Number == 2601))
                 {
-                    MessageBox.Show($"Tên [{author.Id}] đã tồn tại trong cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Tên [{author.Name}] đã tồn tại trong cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -205,6 +185,12 @@ namespace PresentationLayer.Forms.Screen
             {
                 MessageBox.Show($"Đã xảy ra lỗi khi xóa tác giả [{author.Name}]", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void BtnAddAuthor_Click(object sender, EventArgs e)
+        {
+            AuthorInsertForm authorInsertForm = new AuthorInsertForm();
+            authorInsertForm.ShowDialog();
         }
     }
 }

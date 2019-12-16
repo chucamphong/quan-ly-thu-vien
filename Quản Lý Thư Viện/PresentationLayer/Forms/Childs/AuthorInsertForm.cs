@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
 using System.Windows.Forms;
+using BusinessLogicLayer;
 using Core.Validation;
 using DataTransferObject;
 using Guna.UI.Lib;
@@ -9,16 +12,12 @@ namespace PresentationLayer.Forms.Childs
 {
     public partial class AuthorInsertForm : Form
     {
-        private readonly Author author = new Author();
+        private bool validateAuthorName = false;
 
         public AuthorInsertForm()
         {
             this.InitializeComponent();
         }
-
-        public delegate void DelegateSendAuthor(Author author);
-
-        public DelegateSendAuthor SendAuthor { get; set; }
 
         private void AuthorInsertForm_Load(object sender, EventArgs e)
         {
@@ -32,20 +31,54 @@ namespace PresentationLayer.Forms.Childs
             if (string.IsNullOrEmpty(txtName.Text))
             {
                 Validation.SetErrorTextBox(txtName, this.lblNameError, "Tên tác giả không được để trống");
+                this.validateAuthorName = false;
             }
             else
             {
                 Validation.ClearErrorTextBox(txtName, this.lblNameError);
+                this.validateAuthorName = true;
             }
         }
 
         private void BtnAddAuthor_Click(object sender, EventArgs e)
         {
-            this.author.Name = this.txtName.Text;
+            if (!this.validateAuthorName)
+            {
+                MessageBox.Show("Tên tác giả không được để trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            this.SendAuthor(this.author);
+            Author author = new Author
+            {
+                Name = this.txtName.Text,
+            };
 
-            this.Close();
+            this.InsertAuthor(author);
+        }
+
+        /// <summary>
+        /// Gửi truy vấn thêm tác giả đến cơ sở dữ liệu.
+        /// </summary>
+        /// <param name="author">Tác giả cần thêm.</param>
+        private void InsertAuthor(Author author)
+        {
+            try
+            {
+                AuthorLogic.Insert(author);
+                this.Close();
+            }
+            catch (DbUpdateException exception)
+            {
+                // Trường hợp tên tác giả bị trùng
+                if (exception.InnerException.InnerException is SqlException innerException && (innerException.Number == 2627 || innerException.Number == 2601))
+                {
+                    MessageBox.Show($"Tên [{author.Name}] đã tồn tại trong cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Đã xảy ra lỗi khi thêm tác giả vào cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
