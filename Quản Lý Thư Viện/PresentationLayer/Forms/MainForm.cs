@@ -108,5 +108,10 @@ namespace PresentationLayer.Forms
                 this.pnlSidebar.Width = this.pnlTitlebar_2.Width = this.sidebarWidth;
             }
         }
+
+        private void BtnUserManagement_Click(object sender, EventArgs e)
+        {
+            this.SetChildForm(new UserScreen());
+        }
     }
 }

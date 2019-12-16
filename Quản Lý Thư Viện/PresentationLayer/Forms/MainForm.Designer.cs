@@ -43,7 +43,7 @@ namespace PresentationLayer.Forms
             this.drgTitleBar_2 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.pnlSidebar = new System.Windows.Forms.Panel();
             this.btnAuthorManagement = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
+            this.btnUserManagement = new Guna.UI.WinForms.GunaButton();
             this.sideBarActived = new System.Windows.Forms.Panel();
             this.btnBookManagement = new Guna.UI.WinForms.GunaButton();
             this.btnHome = new Guna.UI.WinForms.GunaButton();
@@ -163,7 +163,7 @@ namespace PresentationLayer.Forms
             // 
             this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.pnlSidebar.Controls.Add(this.btnAuthorManagement);
-            this.pnlSidebar.Controls.Add(this.gunaButton2);
+            this.pnlSidebar.Controls.Add(this.btnUserManagement);
             this.pnlSidebar.Controls.Add(this.sideBarActived);
             this.pnlSidebar.Controls.Add(this.btnBookManagement);
             this.pnlSidebar.Controls.Add(this.btnHome);
@@ -205,34 +205,35 @@ namespace PresentationLayer.Forms
             this.btnAuthorManagement.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
             this.btnAuthorManagement.Click += new System.EventHandler(this.BtnAuthorManagement_Click);
             // 
-            // gunaButton2
+            // btnUserManagement
             // 
-            this.gunaButton2.Animated = true;
-            this.gunaButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaButton2.AnimationSpeed = 0.03F;
-            this.gunaButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.gunaButton2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.gunaButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gunaButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.gunaButton2.Image = global::PresentationLayer.Properties.Resources.User;
-            this.gunaButton2.ImageOffsetX = 10;
-            this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton2.Location = new System.Drawing.Point(0, 497);
-            this.gunaButton2.Name = "gunaButton2";
-            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.gunaButton2.OnHoverForeColor = System.Drawing.Color.WhiteSmoke;
-            this.gunaButton2.OnHoverImage = null;
-            this.gunaButton2.OnPressedColor = System.Drawing.Color.WhiteSmoke;
-            this.gunaButton2.Size = new System.Drawing.Size(235, 50);
-            this.gunaButton2.TabIndex = 6;
-            this.gunaButton2.Text = "Tài khoản";
-            this.gunaButton2.TextOffsetX = 10;
-            this.gunaButton2.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
+            this.btnUserManagement.Animated = true;
+            this.btnUserManagement.AnimationHoverSpeed = 0.07F;
+            this.btnUserManagement.AnimationSpeed = 0.03F;
+            this.btnUserManagement.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnUserManagement.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnUserManagement.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUserManagement.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnUserManagement.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnUserManagement.FocusedColor = System.Drawing.Color.Empty;
+            this.btnUserManagement.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUserManagement.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUserManagement.Image = global::PresentationLayer.Properties.Resources.User;
+            this.btnUserManagement.ImageOffsetX = 10;
+            this.btnUserManagement.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnUserManagement.Location = new System.Drawing.Point(0, 497);
+            this.btnUserManagement.Name = "btnUserManagement";
+            this.btnUserManagement.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnUserManagement.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnUserManagement.OnHoverForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUserManagement.OnHoverImage = null;
+            this.btnUserManagement.OnPressedColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUserManagement.Size = new System.Drawing.Size(235, 50);
+            this.btnUserManagement.TabIndex = 6;
+            this.btnUserManagement.Text = "Tài khoản";
+            this.btnUserManagement.TextOffsetX = 10;
+            this.btnUserManagement.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
+            this.btnUserManagement.Click += new System.EventHandler(this.BtnUserManagement_Click);
             // 
             // sideBarActived
             // 
@@ -349,7 +350,7 @@ namespace PresentationLayer.Forms
         private System.Windows.Forms.Panel sideBarActived;
         private Guna.UI.WinForms.GunaButton btnBookManagement;
         private Guna.UI.WinForms.GunaButton btnHome;
-        private Guna.UI.WinForms.GunaButton gunaButton2;
+        private Guna.UI.WinForms.GunaButton btnUserManagement;
         private Guna.UI.WinForms.GunaPictureBox btnMenu;
         private Guna.UI.WinForms.GunaControlBox btnMinimize;
         private Guna.UI.WinForms.GunaButton btnAuthorManagement;
