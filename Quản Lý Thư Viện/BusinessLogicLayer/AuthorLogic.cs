@@ -1,10 +1,7 @@
-﻿using DataAccessLayer.Data;
-using DataTransferObject;
-using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
+using DataAccessLayer.Data;
+using DataTransferObject;
 
 namespace BusinessLogicLayer
 {

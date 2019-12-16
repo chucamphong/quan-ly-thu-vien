@@ -91,7 +91,7 @@ namespace PresentationLayer.Forms.Childs
                 // Trường hợp tên tác giả bị trùng
                 if (exception.InnerException.InnerException is SqlException innerException && (innerException.Number == 2627 || innerException.Number == 2601))
                 {
-                    MessageBox.Show($"Tên [{author.Id}] đã tồn tại trong cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
+                    MessageBox.Show($"Tên [{author.Id}] đã tồn tại trong cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {

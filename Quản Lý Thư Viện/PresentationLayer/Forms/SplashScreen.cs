@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Guna.UI.Lib;
 
 namespace PresentationLayer.Forms
 {
@@ -12,7 +13,7 @@ namespace PresentationLayer.Forms
 
         private void LoadingForm_Load(object sender, EventArgs e)
         {
-            Guna.UI.Lib.GraphicsHelper.ShadowForm(sender as Form);
+            GraphicsHelper.ShadowForm(sender as Form);
         }
     }
 }

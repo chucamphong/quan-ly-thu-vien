@@ -3,31 +3,30 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    public abstract class BaseData<TEntity> : IDisposable, IBaseData<TEntity> where TEntity : class
+    public abstract class BaseData<TEntity> : IDisposable, IBaseData<TEntity>
+        where TEntity : class
     {
-        protected readonly LibraryManagementSystemContext Context = new LibraryManagementSystemContext();
-        private readonly DbSet<TEntity> DbSet;
+        private readonly DbSet<TEntity> dbSet;
 
         public BaseData()
         {
-            this.Context = new LibraryManagementSystemContext();
-            this.DbSet = this.Context.Set<TEntity>();
+            this.dbSet = this.Context.Set<TEntity>();
         }
+
+        protected LibraryManagementSystemContext Context { get; } = new LibraryManagementSystemContext();
 
         public int Count()
         {
-            return this.DbSet.Count();
+            return this.dbSet.Count();
         }
 
         public IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, string includeProperties = "")
         {
             this.Context.Database.Log = Console.WriteLine;
-            IQueryable<TEntity> query = this.DbSet;
+            IQueryable<TEntity> query = this.dbSet;
 
             if (filter != null)
             {
@@ -54,7 +53,7 @@ namespace DataAccessLayer
 
         public IEnumerable<TEntity> GetAll()
         {
-            return this.DbSet;
+            return this.dbSet;
         }
 
         public void Dispose()
@@ -67,7 +66,7 @@ namespace DataAccessLayer
 
         public void Update(TEntity entity)
         {
-            this.DbSet.Attach(entity);
+            this.dbSet.Attach(entity);
             this.Context.Entry(entity).State = EntityState.Modified;
         }
 
@@ -85,10 +84,10 @@ namespace DataAccessLayer
         {
             if (this.Context.Entry(entity).State == EntityState.Detached)
             {
-                this.DbSet.Attach(entity);
+                this.dbSet.Attach(entity);
             }
 
-            this.DbSet.Remove(entity);
+            this.dbSet.Remove(entity);
         }
     }
 }

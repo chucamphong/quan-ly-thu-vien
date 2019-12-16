@@ -6,10 +6,12 @@ namespace DataTransferObject
 {
     public class UserBook
     {
-        [Key, Column(Order = 1)]
+        [Key]
+        [Column(Order = 1)]
         public int UserId { get; set; }
 
-        [Key, Column(Order = 2)]
+        [Key]
+        [Column(Order = 2)]
         public int BookId { get; set; }
 
         public User User { get; set; }

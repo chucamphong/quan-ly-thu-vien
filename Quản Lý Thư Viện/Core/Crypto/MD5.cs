@@ -11,7 +11,7 @@ namespace Core.Crypto
                 byte[] data = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
 
                 StringBuilder hash = new StringBuilder();
-                
+
                 foreach (byte b in data)
                 {
                     hash.Append(b.ToString("x2"));
