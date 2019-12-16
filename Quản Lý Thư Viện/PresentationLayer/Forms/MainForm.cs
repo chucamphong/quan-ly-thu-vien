@@ -53,6 +53,21 @@ namespace PresentationLayer.Forms
             this.SetChildForm(new AuthorScreen());
         }
 
+        private void BtnPublisherManagement_Click(object sender, EventArgs e)
+        {
+            this.SetChildForm(new PublisherScreen());
+        }
+
+        private void BtnCategoryManagement_Click(object sender, EventArgs e)
+        {
+            this.SetChildForm(new CategoryScreen());
+        }
+
+        private void BtnUserManagement_Click(object sender, EventArgs e)
+        {
+            this.SetChildForm(new UserScreen());
+        }
+
         /// <summary>
         /// Tạo sự kiện click chuột cho các nút nhấn ở phần Sidebar.
         /// </summary>
@@ -107,11 +122,6 @@ namespace PresentationLayer.Forms
             {
                 this.pnlSidebar.Width = this.pnlTitlebar_2.Width = this.sidebarWidth;
             }
-        }
-
-        private void BtnUserManagement_Click(object sender, EventArgs e)
-        {
-            this.SetChildForm(new UserScreen());
         }
     }
 }
