@@ -52,7 +52,7 @@
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(14, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(772, 72);
+            this.lblTitle.Size = new System.Drawing.Size(775, 72);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Quản Lý Tác Giả";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -63,7 +63,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(14, 72);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(772, 41);
+            this.panel1.Size = new System.Drawing.Size(775, 41);
             this.panel1.TabIndex = 3;
             // 
             // txtSearch
@@ -84,7 +84,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.Radius = 3;
-            this.txtSearch.Size = new System.Drawing.Size(772, 41);
+            this.txtSearch.Size = new System.Drawing.Size(775, 41);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TextOffsetX = 5;
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSearch_KeyDown);
@@ -139,7 +139,7 @@
             this.dataGridView.RowTemplate.Height = 40;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.ShowCellErrors = false;
-            this.dataGridView.Size = new System.Drawing.Size(772, 391);
+            this.dataGridView.Size = new System.Drawing.Size(775, 391);
             this.dataGridView.TabIndex = 4;
             this.dataGridView.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.dataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -174,7 +174,7 @@
             this.panel2.Location = new System.Drawing.Point(14, 113);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 20, 0, 20);
-            this.panel2.Size = new System.Drawing.Size(772, 431);
+            this.panel2.Size = new System.Drawing.Size(775, 431);
             this.panel2.TabIndex = 5;
             // 
             // contextMenuStrip
@@ -196,7 +196,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.ClientSize = new System.Drawing.Size(800, 558);
+            this.ClientSize = new System.Drawing.Size(803, 558);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTitle);
