@@ -1,7 +1,7 @@
-﻿namespace Core
-{
-    using System.Drawing;
+﻿using System.Drawing;
 
+namespace Core
+{
     public struct CustomColor
     {
         public static Color Mandy { get; } = Color.FromArgb(233, 75, 98);

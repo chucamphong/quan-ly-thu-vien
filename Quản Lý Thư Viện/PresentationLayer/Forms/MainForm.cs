@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Guna.UI.Lib;
-using PresentationLayer.Forms.Childs;
+using PresentationLayer.Forms.Screen;
 
 namespace PresentationLayer.Forms
 {

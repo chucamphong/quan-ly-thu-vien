@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
@@ -6,16 +8,12 @@ using System.Linq;
 using System.Windows.Forms;
 using BusinessLogicLayer;
 using DataTransferObject;
+using PresentationLayer.Forms.Childs;
 
-namespace PresentationLayer.Forms.Childs
+namespace PresentationLayer.Forms.Screen
 {
     public partial class AuthorScreen : Form
     {
-        /// <summary>
-        /// Cầu nối giữa dữ liệu và DataGridView.
-        /// </summary>
-        private readonly BindingSource authorsBindingSource = new BindingSource();
-
         /// <summary>
         /// Lưu lại dữ liệu trước khi thay đổi thông tin của tác giả.
         /// </summary>
@@ -28,10 +26,7 @@ namespace PresentationLayer.Forms.Childs
 
         private void AuthorScreen_Load(object sender, EventArgs e)
         {
-            this.authorsBindingSource.DataSource = AuthorLogic.GetAll().OrderBy(author => author.Id).ToList();
-            this.dataGridView.DataSource = this.authorsBindingSource;
-            this.dataGridView.Columns["Id"].ReadOnly = true;
-            this.dataGridView.Columns["Books"].Visible = false;
+            this.AllAuthor();
         }
 
         /// <summary>
@@ -46,11 +41,57 @@ namespace PresentationLayer.Forms.Childs
 
             string authorName = (sender as Control).Text;
 
-            this.authorsBindingSource.DataSource = AuthorLogic.FindByName(authorName);
+            if (string.IsNullOrEmpty(authorName))
+            {
+                this.AllAuthor();
+            }
+            else
+            {
+                this.FindAuthor(authorName);
+            }
+        }
+
+        private void AllAuthor()
+        {
+            this.authorsBindingSource.DataSource = AuthorLogic.GetAll();
+        }
+
+        private void FindAuthor(string authorName)
+        {
+            List<Author> authors = AuthorLogic.FindByName(authorName);
+
+            if (authors.Count == 0)
+            {
+                DialogResult dialogResult = MessageBox.Show($"Không tìm thấy tác giả [{authorName}]\nBạn có muốn tạo tác giả này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    this.ShowAuthorInsertForm();
+                }
+            }
+            else
+            {
+                this.authorsBindingSource.DataSource = authors;
+            }
+        }
+
+        private void ShowAuthorInsertForm()
+        {
+            AuthorInsertForm authorInsertForm = new AuthorInsertForm
+            {
+                SendAuthor = this.InsertAuthor,
+            };
+            authorInsertForm.ShowDialog();
+        }
+
+        private void InsertAuthor(Author author)
+        {
+            AuthorLogic.Insert(author);
+            this.txtSearch.Text = string.Empty;
+            this.AllAuthor();
         }
 
         /// <summary>
-        /// Lưu lại dữ liệu trước khi bắt đầu chỉnh sửa.
+        /// Lưu lại thông tin trước khi bắt đầu chỉnh sửa.
         /// </summary>
         private void DataGridView_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
@@ -132,7 +173,7 @@ namespace PresentationLayer.Forms.Childs
         {
             this.dataGridView.ClearSelection();
 
-            if (e.RowIndex != -1)
+            if (e.RowIndex > -1)
             {
                 this.dataGridView.Rows[e.RowIndex].Selected = true;
                 e.ContextMenuStrip = this.contextMenuStrip;

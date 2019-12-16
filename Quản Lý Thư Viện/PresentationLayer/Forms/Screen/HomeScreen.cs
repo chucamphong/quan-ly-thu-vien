@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using BusinessLogicLayer;
 using Core;
 
-namespace PresentationLayer.Forms.Childs
+namespace PresentationLayer.Forms.Screen
 {
     public partial class HomeScreen : Form
     {

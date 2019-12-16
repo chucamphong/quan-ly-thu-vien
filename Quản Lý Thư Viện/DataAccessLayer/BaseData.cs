@@ -64,10 +64,13 @@ namespace DataAccessLayer
             }
         }
 
-        public void Update(TEntity entity)
+        public TEntity Update(TEntity entity)
         {
-            this.dbSet.Attach(entity);
+            entity = this.dbSet.Attach(entity);
+
             this.Context.Entry(entity).State = EntityState.Modified;
+
+            return entity;
         }
 
         public bool Save()
@@ -75,9 +78,9 @@ namespace DataAccessLayer
             return this.Context.SaveChanges() > 0 ? true : false;
         }
 
-        public void Insert(TEntity entity)
+        public TEntity Insert(TEntity entity)
         {
-            throw new NotImplementedException();
+            return this.dbSet.Add(entity);
         }
 
         public void Delete(TEntity entity)

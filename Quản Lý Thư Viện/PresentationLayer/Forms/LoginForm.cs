@@ -6,6 +6,7 @@ using BusinessLogicLayer;
 using Core;
 using Core.Validation;
 using DataTransferObject;
+using Guna.UI.Lib;
 using Guna.UI.WinForms;
 
 namespace PresentationLayer.Forms
@@ -22,7 +23,7 @@ namespace PresentationLayer.Forms
 
         private void LoginForm_Activated(object sender, EventArgs e)
         {
-            Guna.UI.Lib.GraphicsHelper.ShadowForm(sender as Form);
+            GraphicsHelper.ShadowForm(sender as Form);
             this.txtUsername.Text = "chucamphong@gmail.com";
             this.txtPassword.Text = "123456";
         }
@@ -83,12 +84,12 @@ namespace PresentationLayer.Forms
                 this.validatedUsername = false;
                 string message = string.IsNullOrEmpty(email) ? "Địa chỉ email không được để trống." :
                                                                "Địa chỉ email không hợp lệ.";
-                this.SetErrorTextBox(txtUsername, this.lblUsernameError, message);
+                Validation.SetErrorTextBox(txtUsername, this.lblUsernameError, message);
                 return;
             }
 
             this.validatedUsername = true;
-            this.ClearErrorTextBox(txtUsername, this.lblUsernameError);
+            Validation.ClearErrorTextBox(txtUsername, this.lblUsernameError);
         }
 
         /// <summary>
@@ -102,35 +103,12 @@ namespace PresentationLayer.Forms
             if (string.IsNullOrEmpty(password))
             {
                 this.validatedPassword = false;
-                this.SetErrorTextBox(txtPassword, this.lblPasswordError, "Mật khẩu không được để trống.");
+                Validation.SetErrorTextBox(txtPassword, this.lblPasswordError, "Mật khẩu không được để trống.");
                 return;
             }
 
             this.validatedPassword = true;
-            this.ClearErrorTextBox(txtPassword, this.lblPasswordError);
-        }
-
-        /// <summary>
-        /// Báo lỗi cho người dùng.
-        /// </summary>
-        /// <param name="textBox">Textbox cần đổi màu.</param>
-        /// <param name="lblError">Label để hiển thị tin nhắn lỗi.</param>
-        /// <param name="message">Tin nhắn lỗi.</param>
-        private void SetErrorTextBox(GunaTextBox textBox, Label lblError, string message)
-        {
-            textBox.BorderColor = textBox.FocusedBorderColor = CustomColor.Mandy;
-            lblError.Text = message;
-        }
-
-        /// <summary>
-        /// Xóa báo lỗi.
-        /// </summary>
-        /// <param name="textBox">Textbox cần xóa màu.</param>
-        /// <param name="lblError">Label cần xóa tin nhắn lỗi.</param>
-        private void ClearErrorTextBox(GunaTextBox textBox, Label lblError)
-        {
-            textBox.BorderColor = textBox.FocusedBorderColor = CustomColor.MineShaft;
-            lblError.Text = string.Empty;
+            Validation.ClearErrorTextBox(txtPassword, this.lblPasswordError);
         }
     }
 }

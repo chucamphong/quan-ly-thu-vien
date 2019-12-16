@@ -1,4 +1,4 @@
-﻿namespace PresentationLayer.Forms.Childs
+﻿namespace PresentationLayer.Forms.Screen
 {
     partial class BookScreen
     {

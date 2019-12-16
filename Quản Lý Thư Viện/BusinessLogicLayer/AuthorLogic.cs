@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DataAccessLayer.Data;
 using DataTransferObject;
@@ -30,6 +31,16 @@ namespace BusinessLogicLayer
             using (var authorData = new AuthorData())
             {
                 return authorData.Count();
+            }
+        }
+
+        public static Author Insert(Author author)
+        {
+            using (var authorData = new AuthorData())
+            {
+                author = authorData.Insert(author);
+                authorData.Save();
+                return author;
             }
         }
 

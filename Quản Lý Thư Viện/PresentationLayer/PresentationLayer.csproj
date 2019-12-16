@@ -66,22 +66,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Childs\AuthorScreen.cs">
+    <Compile Include="Forms\Childs\AuthorInsertForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Childs\AuthorScreen.Designer.cs">
+    <Compile Include="Forms\Childs\AuthorInsertForm.Designer.cs">
+      <DependentUpon>AuthorInsertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Screen\AuthorScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Screen\AuthorScreen.Designer.cs">
       <DependentUpon>AuthorScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Childs\BookScreen.cs">
+    <Compile Include="Forms\Screen\BookScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Childs\BookScreen.Designer.cs">
+    <Compile Include="Forms\Screen\BookScreen.Designer.cs">
       <DependentUpon>BookScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Childs\HomeScreen.cs">
+    <Compile Include="Forms\Screen\HomeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Childs\HomeScreen.Designer.cs">
+    <Compile Include="Forms\Screen\HomeScreen.Designer.cs">
       <DependentUpon>HomeScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Controls\GradientCard.cs">
@@ -117,13 +123,16 @@
     <Compile Include="MyApplication.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Childs\AuthorScreen.resx">
+    <EmbeddedResource Include="Forms\Childs\AuthorInsertForm.resx">
+      <DependentUpon>AuthorInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Screen\AuthorScreen.resx">
       <DependentUpon>AuthorScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Childs\BookScreen.resx">
+    <EmbeddedResource Include="Forms\Screen\BookScreen.resx">
       <DependentUpon>BookScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Childs\HomeScreen.resx">
+    <EmbeddedResource Include="Forms\Screen\HomeScreen.resx">
       <DependentUpon>HomeScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Controls\GradientCard.resx">
@@ -157,6 +166,7 @@
     </None>
     <None Include="app.manifest" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DataTransferObject.Author.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -212,6 +222,7 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

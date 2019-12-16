@@ -1,10 +1,10 @@
-﻿namespace DataAccessLayer.Migrations
-{
-    using System.Collections.Generic;
-    using System.Data.Entity.Migrations;
-    using Bogus;
-    using DataTransferObject;
+﻿using System.Collections.Generic;
+using System.Data.Entity.Migrations;
+using Bogus;
+using DataTransferObject;
 
+namespace DataAccessLayer.Migrations
+{
     internal sealed class Configuration : DbMigrationsConfiguration<LibraryManagementSystemContext>
     {
         private readonly List<User> users;
