@@ -84,6 +84,18 @@
     <Compile Include="Forms\Screen\BookScreen.Designer.cs">
       <DependentUpon>BookScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Screen\BorrowerScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Screen\BorrowerScreen.Designer.cs">
+      <DependentUpon>BorrowerScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Screen\CategoryScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Screen\CategoryScreen.Designer.cs">
+      <DependentUpon>CategoryScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Screen\HomeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +119,12 @@
     </Compile>
     <Compile Include="Forms\LoadingForm.Designer.cs">
       <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Screen\PublisherScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Screen\PublisherScreen.Designer.cs">
+      <DependentUpon>PublisherScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Screen\UserScreen.cs">
       <SubType>Form</SubType>
@@ -138,6 +156,12 @@
     <EmbeddedResource Include="Forms\Screen\BookScreen.resx">
       <DependentUpon>BookScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Screen\BorrowerScreen.resx">
+      <DependentUpon>BorrowerScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Screen\CategoryScreen.resx">
+      <DependentUpon>CategoryScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Screen\HomeScreen.resx">
       <DependentUpon>HomeScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Screen\PublisherScreen.resx">
+      <DependentUpon>PublisherScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Screen\UserScreen.resx">
       <DependentUpon>UserScreen.cs</DependentUpon>

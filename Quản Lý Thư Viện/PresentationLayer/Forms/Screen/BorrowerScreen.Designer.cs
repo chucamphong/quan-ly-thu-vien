@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer.Forms.Screen
 {
-    partial class BookScreen
+    partial class BorrowerScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -43,7 +43,7 @@
             this.pnlMain.Location = new System.Drawing.Point(14, 72);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(772, 364);
-            this.pnlMain.TabIndex = 8;
+            this.pnlMain.TabIndex = 6;
             // 
             // pnlHeader
             // 
@@ -53,7 +53,7 @@
             this.pnlHeader.Location = new System.Drawing.Point(14, 0);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(772, 72);
-            this.pnlHeader.TabIndex = 7;
+            this.pnlHeader.TabIndex = 5;
             // 
             // lblTitle
             // 
@@ -63,7 +63,7 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(698, 72);
             this.lblTitle.TabIndex = 4;
-            this.lblTitle.Text = "Quản Lý Sách";
+            this.lblTitle.Text = "Quản Lý Thể Loại";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel2
@@ -89,7 +89,7 @@
             this.btnAddCategory.Size = new System.Drawing.Size(74, 72);
             this.btnAddCategory.TabIndex = 1;
             // 
-            // BookScreen
+            // CategoryScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -100,7 +100,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "BookScreen";
+            this.Name = "CategoryScreen";
             this.Padding = new System.Windows.Forms.Padding(14, 0, 14, 14);
             this.Text = "BookScreen";
             this.pnlHeader.ResumeLayout(false);

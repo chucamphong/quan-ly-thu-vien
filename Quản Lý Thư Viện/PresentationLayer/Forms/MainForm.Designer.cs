@@ -209,6 +209,7 @@ namespace PresentationLayer.Forms
             this.btnBorrowerManagement.Text = "Người dùng";
             this.btnBorrowerManagement.TextOffsetX = 10;
             this.btnBorrowerManagement.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
+            this.btnBorrowerManagement.Click += new System.EventHandler(this.BtnBorrowerManagement_Click);
             // 
             // btnCategoryManagement
             // 

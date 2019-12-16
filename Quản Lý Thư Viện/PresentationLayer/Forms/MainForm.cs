@@ -63,6 +63,11 @@ namespace PresentationLayer.Forms
             this.SetChildForm(new CategoryScreen());
         }
 
+        private void BtnBorrowerManagement_Click(object sender, EventArgs e)
+        {
+            this.SetChildForm(new BorrowerScreen());
+        }
+
         private void BtnUserManagement_Click(object sender, EventArgs e)
         {
             this.SetChildForm(new UserScreen());
