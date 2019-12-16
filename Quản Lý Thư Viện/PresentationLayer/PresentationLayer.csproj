@@ -237,6 +237,15 @@
   <ItemGroup>
     <None Include="Resources\Plus_Actived.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Publisher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Category.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Borrower.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

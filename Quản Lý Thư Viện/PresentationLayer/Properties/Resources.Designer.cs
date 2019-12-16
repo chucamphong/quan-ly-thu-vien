@@ -71,6 +71,26 @@ namespace PresentationLayer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Borrower {
+            get {
+                object obj = ResourceManager.GetObject("Borrower", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Category {
+            get {
+                object obj = ResourceManager.GetObject("Category", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] Guna_UI {
@@ -146,6 +166,16 @@ namespace PresentationLayer.Properties {
         internal static System.Drawing.Bitmap Plus_Actived {
             get {
                 object obj = ResourceManager.GetObject("Plus_Actived", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Publisher {
+            get {
+                object obj = ResourceManager.GetObject("Publisher", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
