@@ -4,9 +4,9 @@ using Guna.UI.Lib;
 
 namespace PresentationLayer.Forms
 {
-    public partial class SplashScreen : Form
+    public partial class SplashForm : Form
     {
-        public SplashScreen()
+        public SplashForm()
         {
             this.InitializeComponent();
         }

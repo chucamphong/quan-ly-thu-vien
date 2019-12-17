@@ -132,11 +132,11 @@
     <Compile Include="Forms\Screen\UserScreen.Designer.cs">
       <DependentUpon>UserScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SplashScreen.cs">
+    <Compile Include="Forms\SplashForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SplashScreen.Designer.cs">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
+    <Compile Include="Forms\SplashForm.Designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
@@ -180,8 +180,8 @@
     <EmbeddedResource Include="Forms\Screen\UserScreen.resx">
       <DependentUpon>UserScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SplashScreen.resx">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

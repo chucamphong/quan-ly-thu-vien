@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer.Forms
 {
-    partial class SplashScreen
+    partial class SplashForm
     {
         /// <summary>
         /// Required designer variable.

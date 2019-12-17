@@ -12,7 +12,7 @@ namespace PresentationLayer
 
         protected override void OnCreateSplashScreen()
         {
-            this.SplashScreen = new SplashScreen();
+            this.SplashScreen = new SplashForm();
         }
     }
 }
