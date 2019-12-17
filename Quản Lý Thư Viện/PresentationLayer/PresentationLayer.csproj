@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Childs\InsertLayoutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Childs\InsertLayoutForm.Designer.cs">
+      <DependentUpon>InsertLayoutForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Childs\AuthorInsertForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,9 +80,6 @@
     </Compile>
     <Compile Include="Forms\Screen\AuthorScreen.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Screen\AuthorScreen.Designer.cs">
-      <DependentUpon>AuthorScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Screen\BookScreen.cs">
       <SubType>Form</SubType>
@@ -92,9 +95,6 @@
     </Compile>
     <Compile Include="Forms\Screen\CategoryScreen.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Screen\CategoryScreen.Designer.cs">
-      <DependentUpon>CategoryScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Screen\HomeScreen.cs">
       <SubType>Form</SubType>
@@ -119,6 +119,12 @@
     </Compile>
     <Compile Include="Forms\LoadingForm.Designer.cs">
       <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Screen\LayoutScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Screen\LayoutScreen.Designer.cs">
+      <DependentUpon>LayoutScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Screen\PublisherScreen.cs">
       <SubType>Form</SubType>
@@ -147,20 +153,17 @@
     <Compile Include="MyApplication.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Childs\InsertLayoutForm.resx">
+      <DependentUpon>InsertLayoutForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Childs\AuthorInsertForm.resx">
       <DependentUpon>AuthorInsertForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Screen\AuthorScreen.resx">
-      <DependentUpon>AuthorScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Screen\BookScreen.resx">
       <DependentUpon>BookScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Screen\BorrowerScreen.resx">
       <DependentUpon>BorrowerScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Screen\CategoryScreen.resx">
-      <DependentUpon>CategoryScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Screen\HomeScreen.resx">
       <DependentUpon>HomeScreen.cs</DependentUpon>
@@ -173,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Screen\LayoutScreen.resx">
+      <DependentUpon>LayoutScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Screen\PublisherScreen.resx">
       <DependentUpon>PublisherScreen.cs</DependentUpon>

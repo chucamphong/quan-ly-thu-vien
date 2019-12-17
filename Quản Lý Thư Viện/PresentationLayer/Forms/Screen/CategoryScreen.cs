@@ -1,25 +1,13 @@
-﻿using System.Windows.Forms;
-using BusinessLogicLayer;
+﻿using BusinessLogicLayer;
+using DataTransferObject;
 
 namespace PresentationLayer.Forms.Screen
 {
-    public partial class CategoryScreen : Form
+    public class CategoryScreen : LayoutScreen<Category, CategoryService>
     {
-        private readonly ICategoryService categoryService = new CategoryService();
-
         public CategoryScreen()
+            : base("Quản Lý Thể Loại")
         {
-            this.InitializeComponent();
-        }
-
-        private void CategoryScreen_Load(object sender, System.EventArgs e)
-        {
-            this.AllCategory();
-        }
-
-        private void AllCategory()
-        {
-            this.categoriesBindingSource.DataSource = this.categoryService.All();
         }
     }
 }

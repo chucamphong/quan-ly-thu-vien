@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using DataAccessLayer;
+using DataTransferObject;
 
 namespace BusinessLogicLayer
 {
     public abstract class Service<TEntity> : IService<TEntity>
-        where TEntity : class
+        where TEntity : class, IEntity
     {
         public virtual List<TEntity> All()
         {
@@ -30,6 +31,14 @@ namespace BusinessLogicLayer
                 entity = entityData.Delete(entity);
                 entityData.Save();
                 return entity;
+            }
+        }
+
+        public List<TEntity> FindByName(string name)
+        {
+            using (var entityData = this.CreateInstance())
+            {
+                return entityData.FindByName(name).ToList();
             }
         }
 

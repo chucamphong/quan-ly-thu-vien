@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using DataTransferObject;
 
 namespace DataAccessLayer
 {
-    public abstract class BaseData<TEntity> : IDisposable, IBaseData<TEntity>
-        where TEntity : class
+    public abstract class BaseData<TEntity> : IBaseData<TEntity>, IDisposable
+        where TEntity : class, IEntity
     {
         private readonly DbSet<TEntity> dbSet;
 
@@ -49,6 +50,11 @@ namespace DataAccessLayer
             }
 
             return query.ToList();
+        }
+
+        public IEnumerable<TEntity> FindByName(string name)
+        {
+            return this.dbSet.Where(entity => entity.Name.Contains(name));
         }
 
         public IEnumerable<TEntity> All()

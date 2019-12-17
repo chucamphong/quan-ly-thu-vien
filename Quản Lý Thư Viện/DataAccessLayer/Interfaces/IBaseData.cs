@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using DataTransferObject;
 
 namespace DataAccessLayer
 {
     public interface IBaseData<TEntity>
-        where TEntity : class
+        where TEntity : class, IEntity
     {
         /// <summary>
         /// Lấy tất cả các bản ghi trong bảng.
@@ -25,6 +26,13 @@ namespace DataAccessLayer
             Expression<Func<TEntity, bool>> filter = null,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
             string includeProperties = "");
+
+        /// <summary>
+        /// Tìm kiếm theo <paramref name="name"/>.
+        /// </summary>
+        /// <param name="name">Tên cần tìm</param>
+        /// <returns>Các bản ghi có <paramref name="name"/> phù hợp.</returns>
+        IEnumerable<TEntity> FindByName(string name);
 
         /// <summary>
         /// Thêm <paramref name="entity"/> vào trong bảng.

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace DataTransferObject
 {
     [Table("Users")]
-    public class User
+    public class User : IEntity
     {
         [Key]
         public int Id { get; set; }

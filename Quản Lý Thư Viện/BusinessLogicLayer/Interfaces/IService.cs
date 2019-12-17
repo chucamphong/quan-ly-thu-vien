@@ -1,15 +1,23 @@
 ﻿using System.Collections.Generic;
+using DataTransferObject;
 
 namespace BusinessLogicLayer
 {
     public interface IService<TEntity>
-        where TEntity : class
+        where TEntity : IEntity
     {
         /// <summary>
         /// Lấy tất cả các bản ghi có trong bảng.
         /// </summary>
         /// <returns>Tất cả các bản ghi.</returns>
         List<TEntity> All();
+
+        /// <summary>
+        /// Tìm kiếm các bản ghi có <paramref name="name"/> phù hợp.
+        /// </summary>
+        /// <param name="name">Tên cần tìm.</param>
+        /// <returns>Các bản ghi có <paramref name="name"/> phù hợp.</returns>
+        List<TEntity> FindByName(string name);
 
         /// <summary>
         /// Thêm một bản ghi vào bảng.

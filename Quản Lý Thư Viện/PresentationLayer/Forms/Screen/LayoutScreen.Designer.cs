@@ -1,6 +1,11 @@
-﻿namespace PresentationLayer.Forms.Screen
+﻿using BusinessLogicLayer;
+using DataTransferObject;
+
+namespace PresentationLayer.Forms.Screen
 {
-    partial class CategoryScreen
+    partial class LayoutScreen<TEntity, TService>
+        where TEntity : IEntity, new()
+        where TService : IService<TEntity>, new()
     {
         /// <summary>
         /// Required designer variable.
@@ -33,33 +38,111 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pnlMain = new System.Windows.Forms.Panel();
-            this.dataGridView = new Guna.UI.WinForms.GunaDataGridView();
-            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pnlFunction = new System.Windows.Forms.Panel();
+            this.btnAdd = new Guna.UI.WinForms.GunaImageButton();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAddCategory = new Guna.UI.WinForms.GunaImageButton();
+            this.pnlSearchBox = new System.Windows.Forms.Panel();
+            this.txtSearch = new Guna.UI.WinForms.GunaTextBox();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.dataGridView = new Guna.UI.WinForms.GunaDataGridView();
+            this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contextMenuStrip = new Guna.UI.WinForms.GunaContextMenuStrip();
             this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlFunction.SuspendLayout();
+            this.pnlHeader.SuspendLayout();
+            this.pnlSearchBox.SuspendLayout();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
-            this.pnlHeader.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             this.contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // pnlFunction
+            // 
+            this.pnlFunction.Controls.Add(this.btnAdd);
+            this.pnlFunction.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlFunction.Location = new System.Drawing.Point(698, 0);
+            this.pnlFunction.Name = "pnlFunction";
+            this.pnlFunction.Size = new System.Drawing.Size(74, 72);
+            this.pnlFunction.TabIndex = 3;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAdd.Image = global::PresentationLayer.Properties.Resources.Plus;
+            this.btnAdd.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnAdd.Location = new System.Drawing.Point(0, 0);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.OnHoverImage = global::PresentationLayer.Properties.Resources.Plus_Actived;
+            this.btnAdd.OnHoverImageOffset = new System.Drawing.Point(0, 0);
+            this.btnAdd.Size = new System.Drawing.Size(74, 72);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
+            // 
+            // pnlHeader
+            // 
+            this.pnlHeader.Controls.Add(this.lblTitle);
+            this.pnlHeader.Controls.Add(this.pnlFunction);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Location = new System.Drawing.Point(14, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(772, 72);
+            this.pnlHeader.TabIndex = 7;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(698, 72);
+            this.lblTitle.TabIndex = 4;
+            this.lblTitle.Text = "Quản Lý Nhà Phát Hành";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pnlSearchBox
+            // 
+            this.pnlSearchBox.Controls.Add(this.txtSearch);
+            this.pnlSearchBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSearchBox.Location = new System.Drawing.Point(14, 72);
+            this.pnlSearchBox.Name = "pnlSearchBox";
+            this.pnlSearchBox.Size = new System.Drawing.Size(772, 41);
+            this.pnlSearchBox.TabIndex = 8;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
+            this.txtSearch.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.txtSearch.BorderSize = 1;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSearch.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.txtSearch.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.txtSearch.FocusedForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.Gray;
+            this.txtSearch.Location = new System.Drawing.Point(0, 0);
+            this.txtSearch.MaxLength = 255;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.Radius = 3;
+            this.txtSearch.Size = new System.Drawing.Size(772, 41);
+            this.txtSearch.TabIndex = 2;
+            this.txtSearch.TextOffsetX = 5;
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSearch_KeyDown);
             // 
             // pnlMain
             // 
             this.pnlMain.Controls.Add(this.dataGridView);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(14, 72);
+            this.pnlMain.Location = new System.Drawing.Point(14, 113);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(772, 364);
-            this.pnlMain.TabIndex = 6;
+            this.pnlMain.Size = new System.Drawing.Size(772, 433);
+            this.pnlMain.TabIndex = 9;
             // 
             // dataGridView
             // 
@@ -82,14 +165,11 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.ColumnHeadersHeight = 30;
-            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn});
-            this.dataGridView.DataSource = this.categoriesBindingSource;
+            this.dataGridView.DataSource = this.bindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -116,7 +196,7 @@
             this.dataGridView.RowTemplate.Height = 40;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.ShowCellErrors = false;
-            this.dataGridView.Size = new System.Drawing.Size(772, 364);
+            this.dataGridView.Size = new System.Drawing.Size(772, 433);
             this.dataGridView.TabIndex = 5;
             this.dataGridView.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.dataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -136,58 +216,13 @@
             this.dataGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             this.dataGridView.ThemeStyle.RowsStyle.Height = 40;
             this.dataGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            // 
-            // categoriesBindingSource
-            // 
-            this.categoriesBindingSource.DataSource = typeof(DataTransferObject.Category);
-            // 
-            // pnlHeader
-            // 
-            this.pnlHeader.Controls.Add(this.lblTitle);
-            this.pnlHeader.Controls.Add(this.panel2);
-            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Location = new System.Drawing.Point(14, 0);
-            this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(772, 72);
-            this.pnlHeader.TabIndex = 5;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(0, 0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(698, 72);
-            this.lblTitle.TabIndex = 4;
-            this.lblTitle.Text = "Quản Lý Thể Loại";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnAddCategory);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(698, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(74, 72);
-            this.panel2.TabIndex = 3;
-            // 
-            // btnAddCategory
-            // 
-            this.btnAddCategory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddCategory.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddCategory.Image = global::PresentationLayer.Properties.Resources.Plus;
-            this.btnAddCategory.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnAddCategory.Location = new System.Drawing.Point(0, 0);
-            this.btnAddCategory.Name = "btnAddCategory";
-            this.btnAddCategory.OnHoverImage = global::PresentationLayer.Properties.Resources.Plus_Actived;
-            this.btnAddCategory.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.btnAddCategory.Size = new System.Drawing.Size(74, 72);
-            this.btnAddCategory.TabIndex = 1;
+            this.dataGridView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DataGridView_CellBeginEdit);
+            this.dataGridView.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.DataGridView_CellContextMenuStripNeeded);
+            this.dataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellEndEdit);
             // 
             // contextMenuStrip
             // 
@@ -196,7 +231,6 @@
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.xóaToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.contextMenuStrip.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.contextMenuStrip.RenderStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.contextMenuStrip.RenderStyle.ColorTable = null;
@@ -206,52 +240,39 @@
             this.contextMenuStrip.RenderStyle.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             this.contextMenuStrip.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.contextMenuStrip.RenderStyle.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
-            this.contextMenuStrip.Size = new System.Drawing.Size(181, 52);
+            this.contextMenuStrip.Size = new System.Drawing.Size(107, 30);
             // 
             // xóaToolStripMenuItem
             // 
             this.xóaToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.xóaToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(106, 26);
             this.xóaToolStripMenuItem.Text = "Xóa";
+            this.xóaToolStripMenuItem.Click += new System.EventHandler(this.DeleteToolStripMenuItem_Click);
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.ContextMenuStrip = this.contextMenuStrip;
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Tên thể loại";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // CategoryScreen
+            // LayoutScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 560);
             this.Controls.Add(this.pnlMain);
+            this.Controls.Add(this.pnlSearchBox);
             this.Controls.Add(this.pnlHeader);
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "CategoryScreen";
+            this.Name = "LayoutScreen";
             this.Padding = new System.Windows.Forms.Padding(14, 0, 14, 14);
             this.Text = "BookScreen";
-            this.Load += new System.EventHandler(this.CategoryScreen_Load);
+            this.Load += new System.EventHandler(this.LayoutScreen_Load);
+            this.pnlFunction.ResumeLayout(false);
+            this.pnlHeader.ResumeLayout(false);
+            this.pnlSearchBox.ResumeLayout(false);
             this.pnlMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
-            this.pnlHeader.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
             this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -259,16 +280,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Panel pnlFunction;
+        private Guna.UI.WinForms.GunaImageButton btnAdd;
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Panel panel2;
-        private Guna.UI.WinForms.GunaImageButton btnAddCategory;
+        private System.Windows.Forms.Panel pnlSearchBox;
+        private Guna.UI.WinForms.GunaTextBox txtSearch;
+        private System.Windows.Forms.Panel pnlMain;
         private Guna.UI.WinForms.GunaDataGridView dataGridView;
-        private System.Windows.Forms.BindingSource categoriesBindingSource;
+        private System.Windows.Forms.BindingSource bindingSource;
         private Guna.UI.WinForms.GunaContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
     }
 }
