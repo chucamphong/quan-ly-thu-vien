@@ -191,6 +191,7 @@ namespace PresentationLayer.Forms.Screen
         {
             AuthorInsertForm authorInsertForm = new AuthorInsertForm();
             authorInsertForm.ShowDialog();
+            this.AllAuthor();
         }
     }
 }
