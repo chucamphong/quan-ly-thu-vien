@@ -7,10 +7,10 @@ namespace PresentationLayer.Forms.Screen
 {
     public partial class HomeScreen : Form
     {
-        private readonly BookService bookService = new BookService();
-        private readonly PublisherService publisherService = new PublisherService();
-        private readonly UserService userService = new UserService();
-        private readonly AuthorService authorService = new AuthorService();
+        private readonly IBookService bookService = new BookService();
+        private readonly IPublisherService publisherService = new PublisherService();
+        private readonly IUserService userService = new UserService();
+        private readonly IAuthorService authorService = new AuthorService();
 
         public HomeScreen()
         {

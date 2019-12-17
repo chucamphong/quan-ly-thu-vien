@@ -14,7 +14,7 @@ namespace PresentationLayer.Forms.Screen
 {
     public partial class AuthorScreen : Form
     {
-        private readonly AuthorService authorService = new AuthorService();
+        private readonly IAuthorService authorService = new AuthorService();
 
         /// <summary>
         /// Lưu lại dữ liệu trước khi thay đổi thông tin của tác giả.

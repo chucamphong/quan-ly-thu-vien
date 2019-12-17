@@ -13,7 +13,7 @@ namespace PresentationLayer.Forms
 {
     public partial class LoginForm : Form
     {
-        private readonly UserService userService = new UserService();
+        private readonly IUserService userService = new UserService();
         private bool validatedUsername = false;
         private bool validatedPassword = false;
 

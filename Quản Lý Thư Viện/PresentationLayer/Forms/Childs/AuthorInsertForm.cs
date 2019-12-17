@@ -12,7 +12,7 @@ namespace PresentationLayer.Forms.Childs
 {
     public partial class AuthorInsertForm : Form
     {
-        private readonly AuthorService authorService = new AuthorService();
+        private readonly IAuthorService authorService = new AuthorService();
         private bool validateAuthorName = false;
 
         public AuthorInsertForm()

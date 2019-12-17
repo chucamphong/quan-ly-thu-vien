@@ -5,7 +5,7 @@ namespace PresentationLayer.Forms.Screen
 {
     public partial class CategoryScreen : Form
     {
-        private readonly CategoryService categoryService = new CategoryService();
+        private readonly ICategoryService categoryService = new CategoryService();
 
         public CategoryScreen()
         {

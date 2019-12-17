@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using DataTransferObject;
 
 namespace BusinessLogicLayer
 {
-    internal interface IAuthorService
+    public interface IAuthorService : IService<Author>
     {
         List<Author> FindByName(string name);
     }

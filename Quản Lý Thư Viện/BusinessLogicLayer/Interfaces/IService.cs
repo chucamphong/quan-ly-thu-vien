@@ -2,7 +2,7 @@
 
 namespace BusinessLogicLayer
 {
-    internal interface IService<TEntity>
+    public interface IService<TEntity>
         where TEntity : class
     {
         /// <summary>
