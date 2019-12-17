@@ -13,6 +13,7 @@ namespace PresentationLayer.Forms
 {
     public partial class LoginForm : Form
     {
+        private readonly UserService userService = new UserService();
         private bool validatedUsername = false;
         private bool validatedPassword = false;
 
@@ -48,7 +49,7 @@ namespace PresentationLayer.Forms
                 btnLogin.Enabled = false;
                 loadingForm.Show();
 
-                User user = await UserLogic.Login(this.txtUsername.Text, this.txtPassword.Text);
+                User user = await this.userService.Login(this.txtUsername.Text, this.txtPassword.Text);
 
                 this.Hide();
 

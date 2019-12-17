@@ -14,6 +14,8 @@ namespace PresentationLayer.Forms.Screen
 {
     public partial class AuthorScreen : Form
     {
+        private readonly AuthorService authorService = new AuthorService();
+
         /// <summary>
         /// Lưu lại dữ liệu trước khi thay đổi thông tin của tác giả.
         /// </summary>
@@ -53,12 +55,12 @@ namespace PresentationLayer.Forms.Screen
 
         private void AllAuthor()
         {
-            this.authorsBindingSource.DataSource = AuthorLogic.GetAll();
+            this.authorsBindingSource.DataSource = this.authorService.All();
         }
 
         private void FindAuthor(string authorName)
         {
-            List<Author> authors = AuthorLogic.FindByName(authorName);
+            List<Author> authors = this.authorService.FindByName(authorName);
 
             if (authors.Count == 0)
             {
@@ -104,7 +106,7 @@ namespace PresentationLayer.Forms.Screen
 
             try
             {
-                AuthorLogic.Update(author);
+                this.authorService.Update(author);
                 MessageBox.Show("Cập nhật tên tác giả thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (DbUpdateException exception)
@@ -173,7 +175,7 @@ namespace PresentationLayer.Forms.Screen
 
             try
             {
-                AuthorLogic.Delete(author);
+                this.authorService.Delete(author);
 
                 this.dataGridView.Rows.RemoveAt(rowSelected);
 

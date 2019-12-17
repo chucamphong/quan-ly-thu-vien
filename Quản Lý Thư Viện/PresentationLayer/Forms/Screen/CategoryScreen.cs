@@ -5,6 +5,8 @@ namespace PresentationLayer.Forms.Screen
 {
     public partial class CategoryScreen : Form
     {
+        private readonly CategoryService categoryService = new CategoryService();
+
         public CategoryScreen()
         {
             this.InitializeComponent();
@@ -17,7 +19,7 @@ namespace PresentationLayer.Forms.Screen
 
         private void AllCategory()
         {
-            this.categoriesBindingSource.DataSource = CategoryLogic.GetAll();
+            this.categoriesBindingSource.DataSource = this.categoryService.All();
         }
     }
 }

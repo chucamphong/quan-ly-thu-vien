@@ -7,6 +7,11 @@ namespace PresentationLayer.Forms.Screen
 {
     public partial class HomeScreen : Form
     {
+        private readonly BookService bookService = new BookService();
+        private readonly PublisherService publisherService = new PublisherService();
+        private readonly UserService userService = new UserService();
+        private readonly AuthorService authorService = new AuthorService();
+
         public HomeScreen()
         {
             this.InitializeComponent();
@@ -15,10 +20,10 @@ namespace PresentationLayer.Forms.Screen
         private void HomeForm_Load(object sender, EventArgs e)
         {
             this.lblHello.Text = $"Xin chào {Auth.User.Name}!";
-            this.grdCardTongSoSach.Content = BookLogic.Count().ToString();
-            this.grdCardTongSoNhaPhatHanh.Content = PublisherLogic.Count().ToString();
-            this.grdCardTongSoNguoiDung.Content = UserLogic.Count().ToString();
-            this.grdCardTongSoTacGia.Content = AuthorLogic.Count().ToString();
+            this.grdCardTongSoSach.Content = this.bookService.Count().ToString();
+            this.grdCardTongSoNhaPhatHanh.Content = this.publisherService.Count().ToString();
+            this.grdCardTongSoNguoiDung.Content = this.userService.Count().ToString();
+            this.grdCardTongSoTacGia.Content = this.authorService.Count().ToString();
         }
     }
 }

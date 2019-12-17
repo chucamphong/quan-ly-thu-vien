@@ -1,12 +1,13 @@
 ﻿using System.Security.Authentication;
 using System.Threading.Tasks;
 using Core.Crypto;
+using DataAccessLayer;
 using DataAccessLayer.Data;
 using DataTransferObject;
 
 namespace BusinessLogicLayer
 {
-    public class UserLogic
+    public sealed class UserService : Service<User>, IUserService
     {
         /// <summary>
         /// Kiểm tra tài khoản và mật khẩu.
@@ -15,11 +16,11 @@ namespace BusinessLogicLayer
         /// <param name="password">Mật khẩu.</param>
         /// <exception cref="AuthenticationException">Tài khoản hoặc mật khẩu không đúng.</exception>
         /// <returns>Thông tin người dùng.</returns>
-        public static async Task<User> Login(string email, string password)
+        public async Task<User> Login(string email, string password)
         {
             string hashPassword = MD5.Hash(password);
 
-            using (var userData = new UserData())
+            using (var userData = this.CreateInstance() as UserData)
             {
                 User user = await Task.Run(() => userData.FindByEmailAndPassword(email, hashPassword));
 
@@ -32,12 +33,9 @@ namespace BusinessLogicLayer
             }
         }
 
-        public static int Count()
+        protected override BaseData<User> CreateInstance()
         {
-            using (var userData = new UserData())
-            {
-                return userData.Count();
-            }
+            return new UserData();
         }
     }
 }

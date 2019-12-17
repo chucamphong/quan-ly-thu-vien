@@ -9,17 +9,10 @@ namespace DataAccessLayer
         where TEntity : class
     {
         /// <summary>
-        /// Thêm <paramref name="entity"/> vào trong bảng.
-        /// </summary>
-        /// <param name="entity">Bản ghi cần thêm.</param>
-        /// <returns>Bản ghi đã thêm.</returns>
-        TEntity Insert(TEntity entity);
-
-        /// <summary>
         /// Lấy tất cả các bản ghi trong bảng.
         /// </summary>
         /// <returns>Danh sách tất cả các bản ghi có trong bảng.</returns>
-        IEnumerable<TEntity> GetAll();
+        IEnumerable<TEntity> All();
 
         /// <summary>
         /// Thực hiện lấy các bản ghi trong bảng theo <paramref name="filter"/>, <paramref name="orderBy"/> và <paramref name="includeProperties"/>.
@@ -34,6 +27,13 @@ namespace DataAccessLayer
             string includeProperties = "");
 
         /// <summary>
+        /// Thêm <paramref name="entity"/> vào trong bảng.
+        /// </summary>
+        /// <param name="entity">Bản ghi cần thêm.</param>
+        /// <returns>Bản ghi đã thêm.</returns>
+        TEntity Insert(TEntity entity);
+
+        /// <summary>
         /// Cập nhật một bản ghi có trong bảng.
         /// </summary>
         /// <param name="entity">Bản ghi cập nhật.</param>
@@ -44,7 +44,8 @@ namespace DataAccessLayer
         /// Xóa bản ghi tương ứng với <paramref name="entity"/>.
         /// </summary>
         /// <param name="entity">Bản ghi cần xóa.</param>
-        void Delete(TEntity entity);
+        /// <returns>Bản ghi sau khi xóa.</returns>
+        TEntity Delete(TEntity entity);
 
         /// <summary>
         /// Đếm số lượng bản ghi có trong bảng.

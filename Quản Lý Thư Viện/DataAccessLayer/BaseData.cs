@@ -51,7 +51,7 @@ namespace DataAccessLayer
             return query.ToList();
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public IEnumerable<TEntity> All()
         {
             return this.dbSet;
         }
@@ -83,14 +83,14 @@ namespace DataAccessLayer
             return this.dbSet.Add(entity);
         }
 
-        public void Delete(TEntity entity)
+        public TEntity Delete(TEntity entity)
         {
             if (this.Context.Entry(entity).State == EntityState.Detached)
             {
                 this.dbSet.Attach(entity);
             }
 
-            this.dbSet.Remove(entity);
+            return this.dbSet.Remove(entity);
         }
     }
 }
