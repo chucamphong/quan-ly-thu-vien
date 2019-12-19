@@ -9,7 +9,7 @@ using PresentationLayer.Forms.Childs;
 
 namespace PresentationLayer.Forms.Screen
 {
-    public partial class LayoutScreen<TEntity, TService> : Form
+    public abstract partial class LayoutScreen<TEntity, TService> : Form
         where TEntity : IEntity, new()
         where TService : IService<TEntity>, new()
     {
@@ -25,6 +25,8 @@ namespace PresentationLayer.Forms.Screen
         }
 
         protected TService Service { get; } = new TService();
+
+        protected abstract void ShowInsertForm();
 
         private void LayoutScreen_Load(object sender, EventArgs e)
         {
@@ -158,23 +160,7 @@ namespace PresentationLayer.Forms.Screen
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            var insertForm = new InsertLayoutForm<TEntity, TService>();
-
-            switch (typeof(TEntity).ToString())
-            {
-                case "DataTransferObject.Author":
-                    insertForm.Title = "Thêm Tác Giả";
-                    insertForm.LblName = "Tên tác giả";
-                    insertForm.BtnText = "Thêm tác giả";
-                    break;
-                case "DataTransferObject.Category":
-                    insertForm.Title = "Thêm Thể Loại";
-                    insertForm.LblName = "Tên thể loại";
-                    insertForm.BtnText = "Thêm thể loại";
-                    break;
-            }
-
-            insertForm.ShowDialog();
+            this.ShowInsertForm();
             this.LoadAll();
         }
 

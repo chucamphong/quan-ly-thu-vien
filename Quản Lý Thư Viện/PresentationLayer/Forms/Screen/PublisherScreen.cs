@@ -1,12 +1,25 @@
-﻿using System.Windows.Forms;
+﻿using BusinessLogicLayer;
+using DataTransferObject;
+using PresentationLayer.Forms.Childs;
 
 namespace PresentationLayer.Forms.Screen
 {
-    public partial class PublisherScreen : Form
+    public partial class PublisherScreen : LayoutScreen<Publisher, PublisherService>
     {
         public PublisherScreen()
+            : base("Quản lý nhà phát hành")
         {
-            this.InitializeComponent();
+        }
+
+        protected override void ShowInsertForm()
+        {
+            var insertForm = new InsertLayoutForm<Publisher, PublisherService>
+            {
+                Title = "Thêm Nhà Phát Hành",
+                Label = "Tên nhà phát hành",
+                BtnText = "Thêm nhà phát hành",
+            };
+            insertForm.ShowDialog();
         }
     }
 }

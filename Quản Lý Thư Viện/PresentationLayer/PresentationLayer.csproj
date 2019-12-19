@@ -129,9 +129,6 @@
     <Compile Include="Forms\Screen\PublisherScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Screen\PublisherScreen.Designer.cs">
-      <DependentUpon>PublisherScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Screen\UserScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,9 +176,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Screen\LayoutScreen.resx">
       <DependentUpon>LayoutScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Screen\PublisherScreen.resx">
-      <DependentUpon>PublisherScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Screen\UserScreen.resx">
       <DependentUpon>UserScreen.cs</DependentUpon>

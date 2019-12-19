@@ -28,7 +28,7 @@ namespace PresentationLayer.Forms.Childs
             set => this.lblTitle.Text = value;
         }
 
-        public string LblName
+        public string Label
         {
             get => this.lblName.Text;
             set => this.lblName.Text = value;
