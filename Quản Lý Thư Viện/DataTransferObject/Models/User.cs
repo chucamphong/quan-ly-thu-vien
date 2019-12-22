@@ -7,6 +7,11 @@ namespace DataTransferObject
     [Table("Users")]
     public class User : IEntity
     {
+        public User()
+        {
+            this.UserBooks = new HashSet<UserBook>();
+        }
+
         [Key]
         public int Id { get; set; }
 
@@ -27,6 +32,6 @@ namespace DataTransferObject
         [Column(TypeName = "varchar")]
         public string Password { get; set; }
 
-        public virtual ICollection<UserBook> UserBooks { get; set; }
+        public ICollection<UserBook> UserBooks { get; set; }
     }
 }

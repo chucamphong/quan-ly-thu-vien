@@ -8,7 +8,7 @@ namespace BusinessLogicLayer
     public abstract class Service<TEntity> : IService<TEntity>
         where TEntity : class, IEntity
     {
-        public virtual List<TEntity> All()
+        public virtual IEnumerable<TEntity> All()
         {
             using (var entityData = this.CreateInstance())
             {
@@ -34,7 +34,7 @@ namespace BusinessLogicLayer
             }
         }
 
-        public List<TEntity> FindByName(string name)
+        public IEnumerable<TEntity> FindByName(string name)
         {
             using (var entityData = this.CreateInstance())
             {

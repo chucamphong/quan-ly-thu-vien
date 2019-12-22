@@ -8,6 +8,11 @@ namespace DataTransferObject
     [Table("Publishers")]
     public class Publisher : IEntity
     {
+        public Publisher()
+        {
+            this.Books = new HashSet<Book>();
+        }
+
         [Key]
         public int Id { get; set; }
 

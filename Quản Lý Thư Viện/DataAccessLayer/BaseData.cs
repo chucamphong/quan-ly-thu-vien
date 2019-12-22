@@ -10,10 +10,11 @@ namespace DataAccessLayer
     public abstract class BaseData<TEntity> : IBaseData<TEntity>, IDisposable
         where TEntity : class, IEntity
     {
-        private readonly DbSet<TEntity> dbSet;
+        protected DbSet<TEntity> dbSet;
 
         public BaseData()
         {
+            this.Context.Database.Log = Console.WriteLine;
             this.dbSet = this.Context.Set<TEntity>();
         }
 
@@ -34,7 +35,7 @@ namespace DataAccessLayer
                 query = query.Where(filter);
             }
 
-            if (string.IsNullOrEmpty(includeProperties))
+            if (!string.IsNullOrEmpty(includeProperties))
             {
                 string[] splitIncludeProperties = includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -57,7 +58,7 @@ namespace DataAccessLayer
             return this.dbSet.Where(entity => entity.Name.Contains(name));
         }
 
-        public IEnumerable<TEntity> All()
+        public virtual IEnumerable<TEntity> All()
         {
             return this.dbSet;
         }

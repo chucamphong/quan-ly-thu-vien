@@ -52,7 +52,7 @@ namespace PresentationLayer.Forms.Screen
             }
             else
             {
-                ICollection<TEntity> entities = this.Service.FindByName(name);
+                var entities = (IList<TEntity>)this.Service.FindByName(name);
 
                 if (entities.Count == 0)
                 {

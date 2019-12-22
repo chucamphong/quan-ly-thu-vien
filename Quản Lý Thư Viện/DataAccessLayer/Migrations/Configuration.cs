@@ -81,12 +81,7 @@ namespace DataAccessLayer.Migrations
                 {
                     Name = "Thám tử lừng danh Conan",
                     Authors = this.authors.FindAll(c => c.Name.Equals("Aoyama Goushou")),
-                    Publishers = new List<Publisher>
-                    {
-                        this.publishers.Find(p => p.Name == "Viz Media"),
-                        this.publishers.Find(p => p.Name == "Funimation"),
-                    },
-                    Thumbnail = "Image Conan",
+                    Publishers = this.publishers.Find(p => p.Name == "Viz Media"),
                     Categories = new List<Category>
                     {
                         this.categories.Find(c => c.Name == "Trinh thám"),
@@ -96,11 +91,7 @@ namespace DataAccessLayer.Migrations
                 {
                     Name = "Doraemon - Chú mèm máy đến từ tương lai",
                     Authors = this.authors.FindAll(c => c.Name.Equals("Fujiko Fujio")),
-                    Publishers = new List<Publisher>
-                    {
-                        this.publishers.Find(p => p.Name == "Nhà xuất bản Kim Đồng"),
-                    },
-                    Thumbnail = "ImageDoraemon",
+                    Publishers = this.publishers.Find(p => p.Name == "Nhà xuất bản Kim Đồng"),
                     Categories = new List<Category>
                     {
                         this.categories.Find(c => c.Name == "Hành động"),
@@ -117,7 +108,7 @@ namespace DataAccessLayer.Migrations
 
             var faker = new Faker<Author>("vi")
                                 .RuleFor(t => t.Id, f => orderIds++)
-                                .RuleFor(t => t.Name, f => f.Random.Hash(10).ToString() + f.Name.FullName());
+                                .RuleFor(t => t.Name, f => f.Person.FullName);
 
             return faker.UseSeed(Randomizer.Seed.Next()).Generate(50);
 

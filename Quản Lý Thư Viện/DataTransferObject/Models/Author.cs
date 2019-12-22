@@ -8,6 +8,11 @@ namespace DataTransferObject
     [Table("Authors")]
     public class Author : IEntity
     {
+        public Author()
+        {
+            this.Books = new HashSet<Book>();
+        }
+
         [Key]
         public int Id { get; set; }
 
@@ -17,6 +22,6 @@ namespace DataTransferObject
         public string Name { get; set; }
 
         [Browsable(false)]
-        public virtual ICollection<Book> Books { get; set; }
+        public ICollection<Book> Books { get; set; }
     }
 }
