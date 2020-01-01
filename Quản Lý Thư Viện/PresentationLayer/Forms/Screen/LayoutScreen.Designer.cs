@@ -240,14 +240,14 @@ namespace PresentationLayer.Forms.Screen
             this.contextMenuStrip.RenderStyle.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             this.contextMenuStrip.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.contextMenuStrip.RenderStyle.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
-            this.contextMenuStrip.Size = new System.Drawing.Size(107, 30);
+            this.contextMenuStrip.Size = new System.Drawing.Size(181, 52);
             // 
             // xóaToolStripMenuItem
             // 
             this.xóaToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.xóaToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(106, 26);
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.xóaToolStripMenuItem.Text = "Xóa";
             this.xóaToolStripMenuItem.Click += new System.EventHandler(this.DeleteToolStripMenuItem_Click);
             // 

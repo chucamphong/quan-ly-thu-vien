@@ -28,6 +28,13 @@ namespace DataAccessLayer
             string includeProperties = "");
 
         /// <summary>
+        /// Tìm kiếm theo <paramref name="id"/>.
+        /// </summary>
+        /// <param name="id">ID cần tìm.</param>
+        /// <returns>Bản ghi có <paramref name="id"/> phù hợp.</returns>
+        TEntity Find(int id);
+
+        /// <summary>
         /// Tìm kiếm theo <paramref name="name"/>.
         /// </summary>
         /// <param name="name">Tên cần tìm</param>

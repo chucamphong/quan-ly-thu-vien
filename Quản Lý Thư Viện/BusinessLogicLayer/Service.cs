@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using DataAccessLayer;
 using DataTransferObject;
 
@@ -8,11 +9,11 @@ namespace BusinessLogicLayer
     public abstract class Service<TEntity> : IService<TEntity>
         where TEntity : class, IEntity
     {
-        public virtual IEnumerable<TEntity> All()
+        public async virtual Task<IEnumerable<TEntity>> All()
         {
             using (var entityData = this.CreateInstance())
             {
-                return entityData.All().ToList();
+                return await Task.Run(() => entityData.All().ToList());
             }
         }
 
@@ -34,6 +35,14 @@ namespace BusinessLogicLayer
             }
         }
 
+        public TEntity Find(int id)
+        {
+            using (var entityData = this.CreateInstance())
+            {
+                return entityData.Find(id);
+            }
+        }
+
         public IEnumerable<TEntity> FindByName(string name)
         {
             using (var entityData = this.CreateInstance())
@@ -52,7 +61,7 @@ namespace BusinessLogicLayer
             }
         }
 
-        public TEntity Update(TEntity entity)
+        public virtual TEntity Update(TEntity entity)
         {
             using (var entityData = this.CreateInstance())
             {

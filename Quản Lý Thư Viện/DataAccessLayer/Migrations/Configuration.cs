@@ -104,18 +104,18 @@ namespace DataAccessLayer.Migrations
 
         private List<Author> AuthorsTableData()
         {
-            int orderIds = 0;
+            //int orderIds = 0;
 
-            var faker = new Faker<Author>("vi")
-                                .RuleFor(t => t.Id, f => orderIds++)
-                                .RuleFor(t => t.Name, f => f.Person.FullName);
+            //var faker = new Faker<Author>("vi")
+            //                    .RuleFor(t => t.Id, f => orderIds++)
+            //                    .RuleFor(t => t.Name, f => f.Person.FullName);
 
-            return faker.UseSeed(Randomizer.Seed.Next()).Generate(50);
+            //return faker.UseSeed(Randomizer.Seed.Next()).Generate(50);
 
-            // return new List<Author> {
-            //    new Author { Name = "Aoyama Goushou" },
-            //    new Author { Name = "Fujiko Fujio" },
-            // };
+            return new List<Author> {
+                new Author { Name = "Aoyama Goushou" },
+                new Author { Name = "Fujiko Fujio" },
+             };
         }
 
         private List<Publisher> PublishersTableData()

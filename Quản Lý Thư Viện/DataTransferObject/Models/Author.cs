@@ -22,6 +22,6 @@ namespace DataTransferObject
         public string Name { get; set; }
 
         [Browsable(false)]
-        public ICollection<Book> Books { get; set; }
+        public virtual ICollection<Book> Books { get; set; }
     }
 }

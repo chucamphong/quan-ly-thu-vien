@@ -131,9 +131,9 @@ namespace PresentationLayer.Forms
             this.btnMaximize.IconSize = 15F;
             this.btnMaximize.Location = new System.Drawing.Point(729, 0);
             this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.OnHoverBackColor = System.Drawing.Color.Transparent;
-            this.btnMaximize.OnHoverIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(39)))));
-            this.btnMaximize.OnPressedColor = System.Drawing.Color.Transparent;
+            this.btnMaximize.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(180)))), ((int)(((byte)(39)))));
+            this.btnMaximize.OnHoverIconColor = System.Drawing.Color.White;
+            this.btnMaximize.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(180)))), ((int)(((byte)(39)))));
             this.btnMaximize.Size = new System.Drawing.Size(45, 47);
             this.btnMaximize.TabIndex = 2;
             // 

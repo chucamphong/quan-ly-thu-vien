@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using DataTransferObject;
 
 namespace BusinessLogicLayer
@@ -10,7 +11,14 @@ namespace BusinessLogicLayer
         /// Lấy tất cả các bản ghi có trong bảng.
         /// </summary>
         /// <returns>Tất cả các bản ghi.</returns>
-        IEnumerable<TEntity> All();
+        Task<IEnumerable<TEntity>> All();
+
+        /// <summary>
+        /// Tìm kiếm các bản ghi có <paramref name="id"/> phù hợp.
+        /// </summary>
+        /// <param name="id">ID cần tìm.</param>
+        /// <returns>Bản ghi có <paramref name="id"/> phù hợp.</returns>
+        TEntity Find(int id);
 
         /// <summary>
         /// Tìm kiếm các bản ghi có <paramref name="name"/> phù hợp.

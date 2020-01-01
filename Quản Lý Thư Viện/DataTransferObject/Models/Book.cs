@@ -18,17 +18,13 @@ namespace DataTransferObject
         [Key]
         public int Id { get; set; }
 
-        [Required]
         public string Name { get; set; }
 
-        [Required]
         [Browsable(false)]
         public Publisher Publishers { get; set; }
 
-        [Required]
-        public ICollection<Author> Authors { get; set; }
+        public virtual ICollection<Author> Authors { get; set; }
 
-        [Required]
         [Browsable(false)]
         public ICollection<Category> Categories { get; set; }
 

@@ -53,6 +53,11 @@ namespace DataAccessLayer
             return query.ToList();
         }
 
+        public virtual TEntity Find(int id)
+        {
+            return this.dbSet.FirstOrDefault(entity => entity.Id == id);
+        }
+
         public IEnumerable<TEntity> FindByName(string name)
         {
             return this.dbSet.Where(entity => entity.Name.Contains(name));

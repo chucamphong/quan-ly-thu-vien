@@ -5,7 +5,6 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using BusinessLogicLayer;
 using DataTransferObject;
-using PresentationLayer.Forms.Childs;
 
 namespace PresentationLayer.Forms.Screen
 {
@@ -164,9 +163,10 @@ namespace PresentationLayer.Forms.Screen
             this.LoadAll();
         }
 
-        private void LoadAll()
+        private async void LoadAll()
         {
-            this.bindingSource.DataSource = this.Service.All();
+            this.bindingSource.DataSource = await this.Service.All();
+            this.dataGridView.Columns[0].ReadOnly = true;
         }
 
         /// <summary>
